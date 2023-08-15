@@ -208,13 +208,115 @@ class _MyOpayState extends State<MyOpay> {
                             Container(
                               child: Column(
                                 children: [
-                                  Icon(
-                                    Icons.app_settings_alt_rounded,
-                                    color: Colors.green.shade600,
-                                  )
+                                  Card(
+                                    margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
+                                    elevation: 5,
+                                    shadowColor: Colors.green.shade100,
+                                    color: Colors.greenAccent.shade100,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(20)),
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.app_settings_alt_rounded,
+                                          color: Colors.green.shade600,
+                                          size: 30.0,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  MyTexts(
+                                      color: Colors.black,
+                                      text: 'Airtime',
+                                      fontSize: 1.1)
                                 ],
                               ),
-                            )
+                            ),
+                            Container(
+                              child: Column(
+                                children: [
+                                  Card(
+                                    margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
+                                    elevation: 5,
+                                    shadowColor: Colors.green.shade100,
+                                    color: Colors.greenAccent.shade100,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(20)),
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.mobile_screen_share_sharp,
+                                          color: Colors.green.shade600,
+                                          size: 30.0,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  MyTexts(
+                                      color: Colors.black,
+                                      text: 'Data',
+                                      fontSize: 1.1)
+                                ],
+                              ),
+                            ),
+                            Container(
+                              child: Column(
+                                children: [
+                                  Card(
+                                    margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
+                                    elevation: 5,
+                                    shadowColor: Colors.green.shade100,
+                                    color: Colors.greenAccent.shade100,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(20)),
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.sports_soccer,
+                                          color: Colors.green.shade600,
+                                          size: 30.0,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  MyTexts(
+                                      color: Colors.black,
+                                      text: 'Betting',
+                                      fontSize: 1.1)
+                                ],
+                              ),
+                            ),
+                            Container(
+                              child: Column(
+                                children: [
+                                  Card(
+                                    margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
+                                    elevation: 5,
+                                    shadowColor: Colors.green.shade100,
+                                    color: Colors.greenAccent.shade100,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(20)),
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.live_tv,
+                                          color: Colors.green.shade600,
+                                          size: 30.0,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  MyTexts(
+                                      color: Colors.black,
+                                      text: 'TV',
+                                      fontSize: 1.1)
+                                ],
+                              ),
+                            ),
                           ],
                         ),
                       ),
