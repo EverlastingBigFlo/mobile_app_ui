@@ -69,7 +69,6 @@ class _MyOpayState extends State<MyOpay> {
             ),
             Container(
               child: Row(
-                // mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Icon(Icons.headphones_outlined),
                   Icon(Icons.qr_code_rounded),
@@ -85,11 +84,11 @@ class _MyOpayState extends State<MyOpay> {
         child: Column(
           children: [
             Card(
-              elevation: 4,
+              elevation: 5,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
               ),
-              color: Colors.green.shade500,
+              color: Colors.green.shade600,
               child: Padding(
                 padding: const EdgeInsets.all(18.0),
                 child: Column(
@@ -193,8 +192,36 @@ class _MyOpayState extends State<MyOpay> {
                 ),
               ),
             ),
-            Container(),
-            Container(),
+            Card(
+              elevation: 5,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              color: Colors.white,
+              child: Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              child: Column(
+                                children: [
+                                  Icon(
+                                    Icons.app_settings_alt_rounded,
+                                    color: Colors.green.shade600,
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Container()
+                    ],
+                  )),
+            ),
           ],
         ),
       ),
