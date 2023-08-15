@@ -89,6 +89,7 @@ class _MyOpayState extends State<MyOpay> {
                 borderRadius: BorderRadius.circular(15),
               ),
               color: Colors.green.shade600,
+              margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
               child: Padding(
                 padding: const EdgeInsets.all(18.0),
                 child: Column(
@@ -101,12 +102,12 @@ class _MyOpayState extends State<MyOpay> {
                           MyTexts(
                             color: Colors.white,
                             text: 'Available Balance',
-                            fontSize: 1.2,
+                            fontSize: 1.1,
                           ),
                           MyTexts(
                             color: Colors.white,
                             text: 'Transaction History',
-                            fontSize: 1.2,
+                            fontSize: 1.1,
                           ),
                         ],
                       ),
@@ -118,7 +119,7 @@ class _MyOpayState extends State<MyOpay> {
                           MyTexts(
                             color: Colors.white,
                             text: '****',
-                            fontSize: 1.2,
+                            fontSize: 1.1,
                           ),
                         ],
                       ),
@@ -130,7 +131,7 @@ class _MyOpayState extends State<MyOpay> {
                           MyTexts(
                             color: Colors.white,
                             text: '& Cashback****',
-                            fontSize: 1.2,
+                            fontSize: 1.1,
                           ),
                         ],
                       ),
@@ -150,7 +151,7 @@ class _MyOpayState extends State<MyOpay> {
                                 MyTexts(
                                   color: Colors.white,
                                   text: 'Add money',
-                                  fontSize: 1.2,
+                                  fontSize: 1.1,
                                 )
                               ],
                             ),
@@ -165,7 +166,7 @@ class _MyOpayState extends State<MyOpay> {
                                 MyTexts(
                                   color: Colors.white,
                                   text: 'Transfer',
-                                  fontSize: 1.2,
+                                  fontSize: 1.1,
                                 )
                               ],
                             ),
@@ -180,7 +181,7 @@ class _MyOpayState extends State<MyOpay> {
                                 MyTexts(
                                   color: Colors.white,
                                   text: 'Withdraw',
-                                  fontSize: 1.2,
+                                  fontSize: 1.1,
                                 )
                               ],
                             ),
@@ -193,7 +194,7 @@ class _MyOpayState extends State<MyOpay> {
               ),
             ),
             Card(
-              elevation: 5,
+              elevation: 2,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15)),
               color: Colors.white,
@@ -202,6 +203,7 @@ class _MyOpayState extends State<MyOpay> {
                   child: Column(
                     children: [
                       Container(
+                        margin: EdgeInsets.fromLTRB(0, 0, 0, 40),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -320,7 +322,125 @@ class _MyOpayState extends State<MyOpay> {
                           ],
                         ),
                       ),
-                      Container()
+                      Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              child: Column(
+                                children: [
+                                  Card(
+                                    margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
+                                    elevation: 5,
+                                    shadowColor: Colors.green.shade100,
+                                    color: Colors.greenAccent.shade100,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(20)),
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.lightbulb_outline,
+                                          color: Colors.green.shade600,
+                                          size: 30.0,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  MyTexts(
+                                      color: Colors.black,
+                                      text: 'Electricity',
+                                      fontSize: 1.1)
+                                ],
+                              ),
+                            ),
+                            Container(
+                              child: Column(
+                                children: [
+                                  Card(
+                                    margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
+                                    elevation: 5,
+                                    shadowColor: Colors.green.shade100,
+                                    color: Colors.greenAccent.shade100,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(20)),
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.wifi_outlined,
+                                          color: Colors.green.shade600,
+                                          size: 30.0,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  MyTexts(
+                                      color: Colors.black,
+                                      text: 'Internet',
+                                      fontSize: 1.1)
+                                ],
+                              ),
+                            ),
+                            Container(
+                              child: Column(
+                                children: [
+                                  Card(
+                                    margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
+                                    elevation: 5,
+                                    shadowColor: Colors.green.shade100,
+                                    color: Colors.greenAccent.shade100,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(20)),
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.attach_money,
+                                          color: Colors.green.shade600,
+                                          size: 30.0,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  MyTexts(
+                                      color: Colors.black,
+                                      text: 'Refer&Earn',
+                                      fontSize: 1.1)
+                                ],
+                              ),
+                            ),
+                            Container(
+                              child: Column(
+                                children: [
+                                  Card(
+                                    margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
+                                    elevation: 5,
+                                    shadowColor: Colors.green.shade100,
+                                    color: Colors.greenAccent.shade100,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(20)),
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.arrow_circle_right_rounded,
+                                          color: Colors.green.shade600,
+                                          size: 30.0,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  MyTexts(
+                                      color: Colors.black,
+                                      text: 'More',
+                                      fontSize: 1.1)
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   )),
             ),
