@@ -289,7 +289,7 @@ class _MyOpayState extends State<MyOpay> {
               ),
             ),
 
-// old style
+// old code
             // Card(
             //   elevation: 2,
             //   shape: RoundedRectangleBorder(
@@ -543,8 +543,7 @@ class _MyOpayState extends State<MyOpay> {
             //       )),
             // ),
 
-            // Refer Section
-
+// Refer Section
             Card(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
