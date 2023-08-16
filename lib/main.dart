@@ -211,25 +211,32 @@ class _MyOpayState extends State<MyOpay> {
               child: Column(
                 children: [
                   Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    margin: EdgeInsets.fromLTRB(0, 30, 0, 30),
+                    child: Column(
                       children: [
-                        ...mylist.map((e) => Icon(
-                              e['icon'],
-                              color: Colors.green.shade500,
-                              size: 30,
-                            ))
-                      ],
-                    ),
-                  ),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        ...mylist.map((e) => Text(
-                              e['text'],
-                              style: TextStyle(fontSize: 16),
-                            ))
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              ...mylist.map((e) => Icon(
+                                    e['icon'],
+                                    color: Colors.green.shade500,
+                                    size: 30,
+                                  ))
+                            ],
+                          ),
+                        ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              ...mylist.map((e) => Text(
+                                    e['text'],
+                                    style: TextStyle(fontSize: 16),
+                                  ))
+                            ],
+                          ),
+                        )
                       ],
                     ),
                   )
