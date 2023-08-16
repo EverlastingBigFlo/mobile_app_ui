@@ -60,6 +60,12 @@ class _MyOpayState extends State<MyOpay> {
     {'text': 'Betting', 'icon': Icons.sports_soccer},
     {'text': 'TV', 'icon': Icons.live_tv},
   ];
+  List mySecondList = [
+    {'text': 'Electricity', 'icon': Icons.lightbulb_outline},
+    {'text': 'Internet', 'icon': Icons.wifi_outlined},
+    {'text': 'Refer&Earn', 'icon': Icons.monetization_on},
+    {'text': 'More', 'icon': Icons.arrow_circle_right_rounded},
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -205,6 +211,8 @@ class _MyOpayState extends State<MyOpay> {
               ),
             ),
 
+// second card starts here
+
             Card(
               color: Colors.white,
               margin: EdgeInsets.fromLTRB(0, 5, 0, 5),
@@ -215,6 +223,7 @@ class _MyOpayState extends State<MyOpay> {
                     child: Column(
                       children: [
                         Container(
+                          margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
@@ -239,7 +248,43 @@ class _MyOpayState extends State<MyOpay> {
                         )
                       ],
                     ),
-                  )
+                  ),
+
+// first widget ends here
+
+// second widget starts here
+                  Container(
+                    margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
+                    child: Column(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              ...mySecondList.map((e) => Icon(
+                                    e['icon'],
+                                    color: Colors.green.shade500,
+                                    size: 30,
+                                  ))
+                            ],
+                          ),
+// icons ends here
+                        ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              ...mySecondList.map((e) => Text(
+                                    e['text'],
+                                    style: TextStyle(fontSize: 16),
+                                  ))
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -374,6 +419,7 @@ class _MyOpayState extends State<MyOpay> {
             //               ],
             //             ),
             //           ),
+
             //           Container(
             //             child: Row(
             //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
