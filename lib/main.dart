@@ -66,6 +66,7 @@ class _MyOpayState extends State<MyOpay> {
     {'text': 'Refer&Earn', 'icon': Icons.monetization_on},
     {'text': 'More', 'icon': Icons.arrow_circle_right_rounded},
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -97,451 +98,193 @@ class _MyOpayState extends State<MyOpay> {
           ],
         ),
       ),
+
+      // body starts here
       body: Container(
         child: Column(
           children: [
-            Card(
-              elevation: 5,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-              ),
-              color: Colors.green.shade600,
-              margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
-              child: Padding(
-                padding: const EdgeInsets.all(18.0),
-                child: Column(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          MyTexts(
-                            color: Colors.white,
-                            text: 'Available Balance',
-                            fontSize: 1.1,
-                          ),
-                          MyTexts(
-                            color: Colors.white,
-                            text: 'Transaction History',
-                            fontSize: 1.1,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
-                      child: Row(
-                        children: [
-                          MyTexts(
-                            color: Colors.white,
-                            text: '****',
-                            fontSize: 1.1,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.fromLTRB(0, 12, 0, 20),
-                      child: Row(
-                        children: [
-                          MyTexts(
-                            color: Colors.white,
-                            text: '& Cashback****',
-                            fontSize: 1.1,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.fromLTRB(0, 12, 0, 0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            child: Column(
-                              children: [
-                                Icon(
-                                  Icons.add_circle_outline_rounded,
-                                  color: Colors.white,
-                                ),
-                                MyTexts(
-                                  color: Colors.white,
-                                  text: 'Add money',
-                                  fontSize: 1.1,
-                                )
-                              ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                elevation: 5,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                color: Colors.green.shade600,
+                margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                child: Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            MyTexts(
+                              color: Colors.white,
+                              text: 'Available Balance',
+                              fontSize: 1.1,
                             ),
-                          ),
-                          Container(
-                            child: Column(
-                              children: [
-                                Icon(
-                                  Icons.compare_arrows,
-                                  color: Colors.white,
-                                ),
-                                MyTexts(
-                                  color: Colors.white,
-                                  text: 'Transfer',
-                                  fontSize: 1.1,
-                                )
-                              ],
+                            MyTexts(
+                              color: Colors.white,
+                              text: 'Transaction History',
+                              fontSize: 1.1,
                             ),
-                          ),
-                          Container(
-                            child: Column(
-                              children: [
-                                Icon(
-                                  Icons.arrow_outward_sharp,
-                                  color: Colors.white,
-                                ),
-                                MyTexts(
-                                  color: Colors.white,
-                                  text: 'Withdraw',
-                                  fontSize: 1.1,
-                                )
-                              ],
-                            ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                      Container(
+                        margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
+                        child: Row(
+                          children: [
+                            MyTexts(
+                              color: Colors.white,
+                              text: '****',
+                              fontSize: 1.1,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.fromLTRB(0, 12, 0, 20),
+                        child: Row(
+                          children: [
+                            MyTexts(
+                              color: Colors.white,
+                              text: '& Cashback****',
+                              fontSize: 1.1,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              child: Column(
+                                children: [
+                                  Icon(
+                                    Icons.add_circle_outline_rounded,
+                                    color: Colors.white,
+                                  ),
+                                  MyTexts(
+                                    color: Colors.white,
+                                    text: 'Add money',
+                                    fontSize: 1.1,
+                                  )
+                                ],
+                              ),
+                            ),
+                            Container(
+                              child: Column(
+                                children: [
+                                  Icon(
+                                    Icons.compare_arrows,
+                                    color: Colors.white,
+                                  ),
+                                  MyTexts(
+                                    color: Colors.white,
+                                    text: 'Transfer',
+                                    fontSize: 1.1,
+                                  )
+                                ],
+                              ),
+                            ),
+                            Container(
+                              child: Column(
+                                children: [
+                                  Icon(
+                                    Icons.arrow_outward_sharp,
+                                    color: Colors.white,
+                                  ),
+                                  MyTexts(
+                                    color: Colors.white,
+                                    text: 'Withdraw',
+                                    fontSize: 1.1,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
 
-// second card starts here
+            // second card starts here
 
-            Card(
-              color: Colors.white,
-              margin: EdgeInsets.fromLTRB(0, 5, 0, 5),
-              child: Column(
-                children: [
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 30, 0, 30),
-                    child: Column(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                color: Colors.white,
+                margin: EdgeInsets.fromLTRB(0, 5, 0, 5),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              ...mylist.map((e) => Icon(
-                                    e['icon'],
-                                    color: Colors.green.shade500,
-                                    size: 30,
-                                  ))
-                            ],
-                          ),
-                        ),
-                        Container(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              ...mylist.map((e) => Text(
-                                    e['text'],
-                                    style: TextStyle(fontSize: 16),
-                                  ))
-                            ],
-                          ),
-                        )
+                        ...mylist.map((e) {
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.green.shade50,
+                                    child: Icon(
+                                      e['icon'],
+                                      size: 30,
+                                      color: Colors.green,
+                                    ),
+                                  ),
+                                ),
+                                Text(e['text'])
+                              ],
+                            ),
+                          );
+                        })
                       ],
                     ),
-                  ),
+                    // first widget ends here
 
-// first widget ends here
 
-// second widget starts here
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
-                    child: Column(
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              ...mySecondList.map((e) => Icon(
-                                    e['icon'],
-                                    color: Colors.green.shade500,
-                                    size: 30,
-                                  ))
-                            ],
-                          ),
-// icons ends here
-                        ),
-                        Container(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              ...mySecondList.map((e) => Text(
-                                    e['text'],
-                                    style: TextStyle(fontSize: 16),
-                                  ))
-                            ],
-                          ),
-                        )
+                        ...mySecondList.map((e) {
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.green.shade50,
+                                    child: Icon(
+                                      e['icon'],
+                                      size: 30,
+                                      color: Colors.green,
+                                    ),
+                                  ),
+                                ),
+                                Text(e['text'])
+                              ],
+                            ),
+                          );
+                        })
                       ],
-                    ),
-                  ),
-                ],
+                    )
+                    // secod widgets ends here 
+                  ],
+                ),
               ),
             ),
-
-// old code
-            // Card(
-            //   elevation: 2,
-            //   shape: RoundedRectangleBorder(
-            //       borderRadius: BorderRadius.circular(15)),
-            //   color: Colors.white,
-            //   child: Padding(
-            //       padding: const EdgeInsets.all(18.0),
-            //       child: Column(
-            //         children: [
-            //           Container(
-            //             margin: EdgeInsets.fromLTRB(0, 0, 0, 40),
-            //             child: Row(
-            //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //               children: [
-            //                 Container(
-            //                   child: Column(
-            //                     children: [
-            //                       Card(
-            //                         margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
-            //                         elevation: 5,
-            //                         shadowColor: Colors.green.shade100,
-            //                         color: Colors.greenAccent.shade100,
-            //                         shape: RoundedRectangleBorder(
-            //                             borderRadius:
-            //                                 BorderRadius.circular(20)),
-            //                         child: Row(
-            //                           children: [
-            //                             Icon(
-            //                               Icons.app_settings_alt_rounded,
-            //                               color: Colors.green.shade600,
-            //                               size: 30.0,
-            //                             )
-            //                           ],
-            //                         ),
-            //                       ),
-            //                       MyTexts(
-            //                           color: Colors.black,
-            //                           text: 'Airtime',
-            //                           fontSize: 1.1)
-            //                     ],
-            //                   ),
-            //                 ),
-            //                 Container(
-            //                   child: Column(
-            //                     children: [
-            //                       Card(
-            //                         margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
-            //                         elevation: 5,
-            //                         shadowColor: Colors.green.shade100,
-            //                         color: Colors.greenAccent.shade100,
-            //                         shape: RoundedRectangleBorder(
-            //                             borderRadius:
-            //                                 BorderRadius.circular(20)),
-            //                         child: Row(
-            //                           children: [
-            //                             Icon(
-            //                               Icons.mobile_screen_share_sharp,
-            //                               color: Colors.green.shade600,
-            //                               size: 30.0,
-            //                             )
-            //                           ],
-            //                         ),
-            //                       ),
-            //                       MyTexts(
-            //                           color: Colors.black,
-            //                           text: 'Data',
-            //                           fontSize: 1.1)
-            //                     ],
-            //                   ),
-            //                 ),
-            //                 Container(
-            //                   child: Column(
-            //                     children: [
-            //                       Card(
-            //                         margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
-            //                         elevation: 5,
-            //                         shadowColor: Colors.green.shade100,
-            //                         color: Colors.greenAccent.shade100,
-            //                         shape: RoundedRectangleBorder(
-            //                             borderRadius:
-            //                                 BorderRadius.circular(20)),
-            //                         child: Row(
-            //                           children: [
-            //                             Icon(
-            //                               Icons.sports_soccer,
-            //                               color: Colors.green.shade600,
-            //                               size: 30.0,
-            //                             )
-            //                           ],
-            //                         ),
-            //                       ),
-            //                       MyTexts(
-            //                           color: Colors.black,
-            //                           text: 'Betting',
-            //                           fontSize: 1.1)
-            //                     ],
-            //                   ),
-            //                 ),
-            //                 Container(
-            //                   child: Column(
-            //                     children: [
-            //                       Card(
-            //                         margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
-            //                         elevation: 5,
-            //                         shadowColor: Colors.green.shade100,
-            //                         color: Colors.greenAccent.shade100,
-            //                         shape: RoundedRectangleBorder(
-            //                             borderRadius:
-            //                                 BorderRadius.circular(20)),
-            //                         child: Row(
-            //                           children: [
-            //                             Icon(
-            //                               Icons.live_tv,
-            //                               color: Colors.green.shade600,
-            //                               size: 30.0,
-            //                             )
-            //                           ],
-            //                         ),
-            //                       ),
-            //                       MyTexts(
-            //                           color: Colors.black,
-            //                           text: 'TV',
-            //                           fontSize: 1.1)
-            //                     ],
-            //                   ),
-            //                 ),
-            //               ],
-            //             ),
-            //           ),
-
-            //           Container(
-            //             child: Row(
-            //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //               children: [
-            //                 Container(
-            //                   child: Column(
-            //                     children: [
-            //                       Card(
-            //                         margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
-            //                         elevation: 5,
-            //                         shadowColor: Colors.green.shade100,
-            //                         color: Colors.greenAccent.shade100,
-            //                         shape: RoundedRectangleBorder(
-            //                             borderRadius:
-            //                                 BorderRadius.circular(20)),
-            //                         child: Row(
-            //                           children: [
-            //                             Icon(
-            //                               Icons.lightbulb_outline,
-            //                               color: Colors.green.shade600,
-            //                               size: 30.0,
-            //                             )
-            //                           ],
-            //                         ),
-            //                       ),
-            //                       MyTexts(
-            //                           color: Colors.black,
-            //                           text: 'Electricity',
-            //                           fontSize: 1.1)
-            //                     ],
-            //                   ),
-            //                 ),
-            //                 Container(
-            //                   child: Column(
-            //                     children: [
-            //                       Card(
-            //                         margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
-            //                         elevation: 5,
-            //                         shadowColor: Colors.green.shade100,
-            //                         color: Colors.greenAccent.shade100,
-            //                         shape: RoundedRectangleBorder(
-            //                             borderRadius:
-            //                                 BorderRadius.circular(20)),
-            //                         child: Row(
-            //                           children: [
-            //                             Icon(
-            //                               Icons.wifi_outlined,
-            //                               color: Colors.green.shade600,
-            //                               size: 30.0,
-            //                             )
-            //                           ],
-            //                         ),
-            //                       ),
-            //                       MyTexts(
-            //                           color: Colors.black,
-            //                           text: 'Internet',
-            //                           fontSize: 1.1)
-            //                     ],
-            //                   ),
-            //                 ),
-            //                 Container(
-            //                   child: Column(
-            //                     children: [
-            //                       Card(
-            //                         margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
-            //                         elevation: 5,
-            //                         shadowColor: Colors.green.shade100,
-            //                         color: Colors.greenAccent.shade100,
-            //                         shape: RoundedRectangleBorder(
-            //                             borderRadius:
-            //                                 BorderRadius.circular(20)),
-            //                         child: Row(
-            //                           children: [
-            //                             Icon(
-            //                               Icons.monetization_on,
-            //                               color: Colors.green.shade600,
-            //                               size: 30.0,
-            //                             )
-            //                           ],
-            //                         ),
-            //                       ),
-            //                       MyTexts(
-            //                           color: Colors.black,
-            //                           text: 'Refer&Earn',
-            //                           fontSize: 1.1)
-            //                     ],
-            //                   ),
-            //                 ),
-            //                 Container(
-            //                   child: Column(
-            //                     children: [
-            //                       Card(
-            //                         margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
-            //                         elevation: 5,
-            //                         shadowColor: Colors.green.shade100,
-            //                         color: Colors.greenAccent.shade100,
-            //                         shape: RoundedRectangleBorder(
-            //                             borderRadius:
-            //                                 BorderRadius.circular(20)),
-            //                         child: Row(
-            //                           children: [
-            //                             Icon(
-            //                               Icons.arrow_circle_right_rounded,
-            //                               color: Colors.green.shade600,
-            //                               size: 30.0,
-            //                             )
-            //                           ],
-            //                         ),
-            //                       ),
-            //                       MyTexts(
-            //                           color: Colors.black,
-            //                           text: 'More',
-            //                           fontSize: 1.1)
-            //                     ],
-            //                   ),
-            //                 ),
-            //               ],
-            //             ),
-            //           ),
-            //         ],
-            //       )),
-            // ),
 
 // Refer Section
             Card(
