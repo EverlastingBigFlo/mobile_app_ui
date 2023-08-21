@@ -67,6 +67,30 @@ class _MyOpayState extends State<MyOpay> {
     {'text': 'More', 'icon': Icons.arrow_circle_right_rounded},
   ];
 
+  // getRow1() {
+  //   mylist.map((e) {
+  //     return Padding(
+  //       padding: const EdgeInsets.all(8.0),
+  //       child: Column(
+  //         children: [
+  //           Padding(
+  //             padding: const EdgeInsets.all(8.0),
+  //             child: Card(
+  //               color: Colors.green.shade50,
+  //               child: Icon(
+  //                 e['icon'],
+  //                 size: 30,
+  //                 color: Colors.green,
+  //               ),
+  //             ),
+  //           ),
+  //           Text(e['text'])
+  //         ],
+  //       ),
+  //     );
+  //   }).toList();
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -111,13 +135,12 @@ class _MyOpayState extends State<MyOpay> {
                   borderRadius: BorderRadius.circular(15),
                 ),
                 color: Colors.green.shade600,
-                margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
                 child: Padding(
                   padding: const EdgeInsets.all(18.0),
                   child: Column(
                     children: [
                       Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
+                        margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -135,7 +158,7 @@ class _MyOpayState extends State<MyOpay> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
+                        margin: EdgeInsets.fromLTRB(0, 0, 0, 16),
                         child: Row(
                           children: [
                             MyTexts(
@@ -147,7 +170,7 @@ class _MyOpayState extends State<MyOpay> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.fromLTRB(0, 12, 0, 20),
+                        margin: EdgeInsets.fromLTRB(0, 10, 0, 25),
                         child: Row(
                           children: [
                             MyTexts(
@@ -222,7 +245,6 @@ class _MyOpayState extends State<MyOpay> {
               padding: const EdgeInsets.all(8.0),
               child: Card(
                 color: Colors.white,
-                margin: EdgeInsets.fromLTRB(0, 5, 0, 5),
                 child: Column(
                   children: [
                     Row(
@@ -235,8 +257,9 @@ class _MyOpayState extends State<MyOpay> {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Card(
-                                    color: Colors.green.shade50,
+                                  child: CircleAvatar(
+                                    backgroundColor: Colors.green[50],
+                                    radius: 30,
                                     child: Icon(
                                       e['icon'],
                                       size: 30,
@@ -253,7 +276,6 @@ class _MyOpayState extends State<MyOpay> {
                     ),
                     // first widget ends here
 
-
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -264,8 +286,9 @@ class _MyOpayState extends State<MyOpay> {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Card(
-                                    color: Colors.green.shade50,
+                                  child: CircleAvatar(
+                                    backgroundColor: Colors.green[50],
+                                    radius: 30,
                                     child: Icon(
                                       e['icon'],
                                       size: 30,
@@ -280,7 +303,7 @@ class _MyOpayState extends State<MyOpay> {
                         })
                       ],
                     )
-                    // secod widgets ends here 
+                    // secod widgets ends here
                   ],
                 ),
               ),
@@ -296,7 +319,7 @@ class _MyOpayState extends State<MyOpay> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Card(
-                          margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
+                          // margin: EdgeInsets.fromLTRB(0, 5, 0, 18),
                           shadowColor: Colors.green.shade100,
                           color: Colors.greenAccent.shade100,
                           shape: RoundedRectangleBorder(
