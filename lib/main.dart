@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
+import 'package:my_opay/components/card_for_page_view.dart';
 
 import 'components/my_texts.dart';
 
@@ -309,63 +310,89 @@ class _MyOpayState extends State<MyOpay> {
               ),
             ),
 
-// Refer Section
-            Card(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Card(
-                          // margin: EdgeInsets.fromLTRB(0, 5, 0, 18),
-                          shadowColor: Colors.green.shade100,
-                          color: Colors.greenAccent.shade100,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20)),
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.monetization_on,
-                                color: Colors.green.shade600,
-                                size: 30.0,
-                              )
-                            ],
+            // Refer Section
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Card(
+                              shadowColor: Colors.green.shade100,
+                              color: Colors.greenAccent.shade100,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20)),
+                              child: Row(
+                                children: [
+                                  CircleAvatar(
+                                    backgroundColor: Colors.green[50],
+                                    child: Icon(
+                                      Icons.monetization_on,
+                                      color: Colors.green.shade600,
+                                      size: 30.0,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
                           ),
-                        ),
-                        Container(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              MyTexts(
-                                  color: Colors.black,
-                                  text: 'Refer & Earn',
-                                  fontSize: 1.3),
-                              MyTexts(
-                                  color: Colors.black54,
-                                  text: 'Earn N800 Cashback per referral',
-                                  fontSize: 1.1)
-                            ],
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  MyTexts(
+                                      color: Colors.black,
+                                      text: 'Refer & Earn',
+                                      fontSize: 1.3),
+                                  MyTexts(
+                                      color: Colors.black54,
+                                      text: 'Earn N800 Cashback per referral',
+                                      fontSize: 1.1)
+                                ],
+                              ),
+                            ),
                           ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.cancel,
+                              color: Colors.grey.shade600,
+                              size: 20.0,
+                            )
+                          ],
                         ),
-                      ],
+                      ),
                     ),
-                  ),
-                  Container(
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.cancel,
-                          color: Colors.grey.shade600,
-                          size: 20.0,
-                        )
-                      ],
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
+
+            SizedBox(
+              height: 75,
+              child: PageView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  myCard(),
+                  myCard(),
+                  myCard(),
+                ],
+              ),
+            )
           ],
         ),
       ),
