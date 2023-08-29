@@ -1,7 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:my_opay/components/card_for_page_view.dart';
+// import 'package:my_opay/pages/new_page.dart';
 
 import 'components/my_texts.dart';
 
@@ -37,18 +40,13 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const MyOpay(),
+      // home: const myNewPage(),
     );
   }
 }
 
 class MyOpay extends StatefulWidget {
   const MyOpay({super.key});
-
-  // List<Widget> makeRows() {
-  //    return mylist.forEach((element) {
-  //   return  Text('$element');
-  //   })
-  // }
 
   @override
   State<MyOpay> createState() => _MyOpayState();
@@ -68,29 +66,34 @@ class _MyOpayState extends State<MyOpay> {
     {'text': 'More', 'icon': Icons.arrow_circle_right_rounded},
   ];
 
-  // getRow1() {
-  //   mylist.map((e) {
-  //     return Padding(
-  //       padding: const EdgeInsets.all(8.0),
-  //       child: Column(
-  //         children: [
-  //           Padding(
-  //             padding: const EdgeInsets.all(8.0),
-  //             child: Card(
-  //               color: Colors.green.shade50,
-  //               child: Icon(
-  //                 e['icon'],
-  //                 size: 30,
-  //                 color: Colors.green,
-  //               ),
-  //             ),
-  //           ),
-  //           Text(e['text'])
-  //         ],
-  //       ),
-  //     );
-  //   }).toList();
-  // }
+  PageController pageControl = PageController(initialPage: 0);
+  int currPage = 0;
+  late Timer mytime;
+
+  @override
+  void initState() {
+    // autoSlide();
+    super.initState();
+  }
+
+  autoSlide() {
+    mytime = Timer.periodic(Duration(seconds: 1), (timer) {
+      currPage++;
+
+      if (currPage >= 5) {
+        currPage = 0;
+      }
+
+      pageControl.animateToPage(currPage,
+          duration: Duration(seconds: 1), curve: Curves.easeInOut);
+    });
+  }
+
+  @override
+  void dispose() {
+    pageControl.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -382,12 +385,14 @@ class _MyOpayState extends State<MyOpay> {
               ),
             ),
 
-
             SizedBox(
               height: 75,
               child: PageView(
                 scrollDirection: Axis.horizontal,
+                controller: pageControl,
                 children: [
+                  myCard(),
+                  myCard(),
                   myCard(),
                   myCard(),
                   myCard(),
