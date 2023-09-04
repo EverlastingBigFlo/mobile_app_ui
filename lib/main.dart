@@ -4,9 +4,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:my_opay/components/card_for_page_view.dart';
+// import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:my_opay/pages/tab_view.dart';
 // import 'package:my_opay/pages/new_page.dart';
 
 import 'components/my_texts.dart';
+import 'pages/new_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,6 +44,7 @@ class MyApp extends StatelessWidget {
       ),
       home: const MyOpay(),
       // home: const myNewPage(),
+      // home: const myTabView(),
     );
   }
 }
@@ -72,25 +76,29 @@ class _MyOpayState extends State<MyOpay> {
 
   @override
   void initState() {
-    // autoSlide();
+    autoSlide();
     super.initState();
   }
 
   autoSlide() {
-    mytime = Timer.periodic(Duration(seconds: 1), (timer) {
+    mytime = Timer.periodic(Duration(seconds: 3), (timer) {
       currPage++;
 
-      if (currPage >= 5) {
+      if (currPage < 2) {
+        currPage++;
+      } else {
+        pageControl.jumpToPage(0);
         currPage = 0;
       }
 
       pageControl.animateToPage(currPage,
-          duration: Duration(seconds: 1), curve: Curves.easeInOut);
+          duration: Duration(seconds: 1), curve: Curves.easeInCirc);
     });
   }
 
   @override
   void dispose() {
+    mytime.cancel();
     pageControl.dispose();
     super.dispose();
   }
@@ -132,7 +140,7 @@ class _MyOpayState extends State<MyOpay> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(7.0),
               child: Card(
                 elevation: 5,
                 shape: RoundedRectangleBorder(
@@ -140,11 +148,10 @@ class _MyOpayState extends State<MyOpay> {
                 ),
                 color: Colors.green.shade600,
                 child: Padding(
-                  padding: const EdgeInsets.all(18.0),
+                  padding: const EdgeInsets.all(17.0),
                   child: Column(
                     children: [
                       Container(
-                        margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -162,7 +169,7 @@ class _MyOpayState extends State<MyOpay> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 0, 16),
+                        margin: EdgeInsets.fromLTRB(0, 0, 0, 14),
                         child: Row(
                           children: [
                             MyTexts(
@@ -174,7 +181,7 @@ class _MyOpayState extends State<MyOpay> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.fromLTRB(0, 10, 0, 25),
+                        margin: EdgeInsets.fromLTRB(0, 10, 0, 20),
                         child: Row(
                           children: [
                             MyTexts(
@@ -246,7 +253,7 @@ class _MyOpayState extends State<MyOpay> {
             // second card starts here
 
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(7.0),
               child: Card(
                 color: Colors.white,
                 child: Column(
@@ -256,17 +263,17 @@ class _MyOpayState extends State<MyOpay> {
                       children: [
                         ...mylist.map((e) {
                           return Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(7.0),
                             child: Column(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(7.0),
                                   child: CircleAvatar(
                                     backgroundColor: Colors.green[50],
-                                    radius: 30,
+                                    radius: 25,
                                     child: Icon(
                                       e['icon'],
-                                      size: 30,
+                                      size: 25,
                                       color: Colors.green,
                                     ),
                                   ),
@@ -285,17 +292,17 @@ class _MyOpayState extends State<MyOpay> {
                       children: [
                         ...mySecondList.map((e) {
                           return Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(7.0),
                             child: Column(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(1),
                                   child: CircleAvatar(
                                     backgroundColor: Colors.green[50],
-                                    radius: 30,
+                                    radius: 25,
                                     child: Icon(
                                       e['icon'],
-                                      size: 30,
+                                      size: 25,
                                       color: Colors.green,
                                     ),
                                   ),
@@ -386,7 +393,7 @@ class _MyOpayState extends State<MyOpay> {
             ),
 
             SizedBox(
-              height: 75,
+              height: 70,
               child: PageView(
                 scrollDirection: Axis.horizontal,
                 controller: pageControl,
@@ -394,11 +401,93 @@ class _MyOpayState extends State<MyOpay> {
                   myCard(),
                   myCard(),
                   myCard(),
-                  myCard(),
-                  myCard(),
                 ],
               ),
-            )
+            ),
+            // Padding(
+            //   padding: const EdgeInsets.fromLTRB(0, 1, 0, 1),
+            //   child: SmoothPageIndicator(
+            //     controller: pageControl, // Use the same controller here
+            //     count: 3, // Change this to the number of pages (cards)
+            //     effect: WormEffect(), // Use your preferred effect
+            //     // onDotClicked: (index) {
+            //     //   // Handle dot click if needed
+            //     // },
+            //   ),
+            // ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        height: 70,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              child: Column(
+                children: [
+                  CircleAvatar(
+                    backgroundColor: Colors.green[500],
+                    radius: 12,
+                    child: Icon(
+                      Icons.paypal,
+                      color: Colors.white,
+                      size: 20,
+                    ),
+                  ),
+                  MyTexts(
+                      color: Colors.green.shade500, text: 'Home', fontSize: .9)
+                ],
+              ),
+            ),
+            Container(
+              child: Column(
+                children: [
+                  Icon(
+                    Icons.diamond_sharp,
+                    color: Colors.black54,
+                    size: 25,
+                  ),
+                  MyTexts(color: Colors.black54, text: 'Rewards', fontSize: .9)
+                ],
+              ),
+            ),
+            Container(
+              child: Column(
+                children: [
+                  Icon(
+                    Icons.insert_chart_sharp,
+                    color: Colors.black54,
+                    size: 25,
+                  ),
+                  MyTexts(color: Colors.black54, text: 'Finance', fontSize: .9)
+                ],
+              ),
+            ),
+            Container(
+              child: Column(
+                children: [
+                  Icon(
+                    Icons.credit_card,
+                    color: Colors.black54,
+                    size: 25,
+                  ),
+                  MyTexts(color: Colors.black54, text: 'Cards', fontSize: .9)
+                ],
+              ),
+            ),
+            Container(
+              child: Column(
+                children: [
+                  Icon(
+                    Icons.account_circle_outlined,
+                    color: Colors.black54,
+                    size: 25,
+                  ),
+                  MyTexts(color: Colors.black54, text: 'Me', fontSize: .9)
+                ],
+              ),
+            ),
           ],
         ),
       ),
