@@ -4,12 +4,14 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:my_opay/components/card_for_page_view.dart';
+import 'package:my_opay/reward_page.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 // import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:my_opay/pages/tab_view.dart';
+// import 'package:my_opay/pages/tab_view.dart';
 // import 'package:my_opay/pages/new_page.dart';
 
 import 'components/my_texts.dart';
-import 'pages/new_page.dart';
+// import 'pages/new_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,30 +24,31 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyOpay(),
-      // home: const myNewPage(),
-      // home: const myTabView(),
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          // This is the theme of your application.
+          //
+          // TRY THIS: Try running your application with "flutter run". You'll see
+          // the application has a blue toolbar. Then, without quitting the app,
+          // try changing the seedColor in the colorScheme below to Colors.green
+          // and then invoke "hot reload" (save your changes or press the "hot
+          // reload" button in a Flutter-supported IDE, or press "r" if you used
+          // the command line to start the app).
+          //
+          // Notice that the counter didn't reset back to zero; the application
+          // state is not lost during the reload. To reset the state, use hot
+          // restart instead.
+          //
+          // This works for code too, not just values: Most code changes can be
+          // tested with just a hot reload.
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: const MyOpay()
+        // rewardPage(),
+        // home: const myNewPage(),
+        // home: const myTabView(),
+        );
   }
 }
 
@@ -81,18 +84,19 @@ class _MyOpayState extends State<MyOpay> {
   }
 
   autoSlide() {
-    mytime = Timer.periodic(Duration(seconds: 3), (timer) {
-      currPage++;
-
-      if (currPage < 2) {
-        currPage++;
-      } else {
-        pageControl.jumpToPage(0);
+    mytime = Timer.periodic(Duration(seconds: 2), (timer) {
+      if (currPage >= 2) {
         currPage = 0;
+      } else {
+        currPage++;
       }
 
-      pageControl.animateToPage(currPage,
-          duration: Duration(seconds: 1), curve: Curves.easeInCirc);
+
+      pageControl.animateToPage(
+        currPage,
+        duration: Duration(seconds: 1),
+        curve: Curves.easeInCirc,
+      );
     });
   }
 
@@ -102,7 +106,6 @@ class _MyOpayState extends State<MyOpay> {
     pageControl.dispose();
     super.dispose();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -136,294 +139,229 @@ class _MyOpayState extends State<MyOpay> {
       ),
 
       // body starts here
-      body: Container(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(7.0),
-              child: Card(
-                elevation: 5,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(7.0),
+                child: Card(
+                  elevation: 5,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  color: Colors.green.shade600,
+                  child: Padding(
+                    padding: const EdgeInsets.all(14.0),
+                    child: Column(
+                      children: [
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              MyTexts(
+                                color: Colors.white,
+                                text: 'Available Balance',
+                                fontSize: 1.1,
+                              ),
+                              MyTexts(
+                                color: Colors.white,
+                                text: 'Transaction History',
+                                fontSize: 1.1,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.fromLTRB(0, 0, 0, 18),
+                          child: Row(
+                            children: [
+                              MyTexts(
+                                color: Colors.white,
+                                text: '****',
+                                fontSize: 1.1,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.fromLTRB(0, 10, 0, 20),
+                          child: Row(
+                            children: [
+                              MyTexts(
+                                color: Colors.white,
+                                text: '& Cashback****',
+                                fontSize: 1.1,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                child: Column(
+                                  children: [
+                                    Icon(
+                                      Icons.add_circle_outline_rounded,
+                                      color: Colors.white,
+                                    ),
+                                    MyTexts(
+                                      color: Colors.white,
+                                      text: 'Add money',
+                                      fontSize: 1.1,
+                                    )
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                child: Column(
+                                  children: [
+                                    Icon(
+                                      Icons.compare_arrows,
+                                      color: Colors.white,
+                                    ),
+                                    MyTexts(
+                                      color: Colors.white,
+                                      text: 'Transfer',
+                                      fontSize: 1.1,
+                                    )
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                child: Column(
+                                  children: [
+                                    Icon(
+                                      Icons.arrow_outward_sharp,
+                                      color: Colors.white,
+                                    ),
+                                    MyTexts(
+                                      color: Colors.white,
+                                      text: 'Withdraw',
+                                      fontSize: 1.1,
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-                color: Colors.green.shade600,
-                child: Padding(
-                  padding: const EdgeInsets.all(17.0),
+              ),
+
+              // second card starts here
+
+              Padding(
+                padding: const EdgeInsets.all(7.0),
+                child: Card(
+                  color: Colors.white,
                   child: Column(
                     children: [
-                      Container(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            MyTexts(
-                              color: Colors.white,
-                              text: 'Available Balance',
-                              fontSize: 1.1,
-                            ),
-                            MyTexts(
-                              color: Colors.white,
-                              text: 'Transaction History',
-                              fontSize: 1.1,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 0, 14),
-                        child: Row(
-                          children: [
-                            MyTexts(
-                              color: Colors.white,
-                              text: '****',
-                              fontSize: 1.1,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(0, 10, 0, 20),
-                        child: Row(
-                          children: [
-                            MyTexts(
-                              color: Colors.white,
-                              text: '& Cashback****',
-                              fontSize: 1.1,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          ...mylist.map((e) {
+                            return Padding(
+                              padding: const EdgeInsets.all(7.0),
                               child: Column(
                                 children: [
-                                  Icon(
-                                    Icons.add_circle_outline_rounded,
-                                    color: Colors.white,
+                                  Padding(
+                                    padding: const EdgeInsets.all(7.0),
+                                    child: CircleAvatar(
+                                      backgroundColor: Colors.green[50],
+                                      radius: 25,
+                                      child: Icon(
+                                        e['icon'],
+                                        size: 25,
+                                        color: Colors.green,
+                                      ),
+                                    ),
                                   ),
-                                  MyTexts(
-                                    color: Colors.white,
-                                    text: 'Add money',
-                                    fontSize: 1.1,
-                                  )
+                                  Text(e['text'])
                                 ],
                               ),
-                            ),
-                            Container(
-                              child: Column(
-                                children: [
-                                  Icon(
-                                    Icons.compare_arrows,
-                                    color: Colors.white,
-                                  ),
-                                  MyTexts(
-                                    color: Colors.white,
-                                    text: 'Transfer',
-                                    fontSize: 1.1,
-                                  )
-                                ],
-                              ),
-                            ),
-                            Container(
-                              child: Column(
-                                children: [
-                                  Icon(
-                                    Icons.arrow_outward_sharp,
-                                    color: Colors.white,
-                                  ),
-                                  MyTexts(
-                                    color: Colors.white,
-                                    text: 'Withdraw',
-                                    fontSize: 1.1,
-                                  )
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
+                            );
+                          })
+                        ],
                       ),
+                      // first widget ends here
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          ...mySecondList.map((e) {
+                            return Padding(
+                              padding: const EdgeInsets.all(7.0),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(1),
+                                    child: CircleAvatar(
+                                      backgroundColor: Colors.green[50],
+                                      radius: 25,
+                                      child: Icon(
+                                        e['icon'],
+                                        size: 25,
+                                        color: Colors.green,
+                                      ),
+                                    ),
+                                  ),
+                                  Text(e['text'])
+                                ],
+                              ),
+                            );
+                          })
+                        ],
+                      )
                     ],
                   ),
                 ),
               ),
-            ),
 
-            // second card starts here
+              // Refer Section
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: myCard(),
+              ),
 
-            Padding(
-              padding: const EdgeInsets.all(7.0),
-              child: Card(
-                color: Colors.white,
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        ...mylist.map((e) {
-                          return Padding(
-                            padding: const EdgeInsets.all(7.0),
-                            child: Column(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(7.0),
-                                  child: CircleAvatar(
-                                    backgroundColor: Colors.green[50],
-                                    radius: 25,
-                                    child: Icon(
-                                      e['icon'],
-                                      size: 25,
-                                      color: Colors.green,
-                                    ),
-                                  ),
-                                ),
-                                Text(e['text'])
-                              ],
-                            ),
-                          );
-                        })
-                      ],
-                    ),
-                    // first widget ends here
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        ...mySecondList.map((e) {
-                          return Padding(
-                            padding: const EdgeInsets.all(7.0),
-                            child: Column(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(1),
-                                  child: CircleAvatar(
-                                    backgroundColor: Colors.green[50],
-                                    radius: 25,
-                                    child: Icon(
-                                      e['icon'],
-                                      size: 25,
-                                      color: Colors.green,
-                                    ),
-                                  ),
-                                ),
-                                Text(e['text'])
-                              ],
-                            ),
-                          );
-                        })
-                      ],
-                    )
-                    // secod widgets ends here
-                  ],
+              Padding(
+                padding: const EdgeInsets.all(3.0),
+                child: SizedBox(
+                  height: 75,
+                  child: PageView(
+                    scrollDirection: Axis.horizontal,
+                    controller: pageControl,
+                    children: [
+                      myCard(),
+                      myCard(),
+                      myCard(),
+                    ],
+                  ),
                 ),
               ),
-            ),
-
-            // Refer Section
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Card(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Card(
-                              shadowColor: Colors.green.shade100,
-                              color: Colors.greenAccent.shade100,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20)),
-                              child: Row(
-                                children: [
-                                  CircleAvatar(
-                                    backgroundColor: Colors.green[50],
-                                    child: Icon(
-                                      Icons.monetization_on,
-                                      color: Colors.green.shade600,
-                                      size: 30.0,
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  MyTexts(
-                                      color: Colors.black,
-                                      text: 'Refer & Earn',
-                                      fontSize: 1.3),
-                                  MyTexts(
-                                      color: Colors.black54,
-                                      text: 'Earn N800 Cashback per referral',
-                                      fontSize: 1.1)
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.cancel,
-                              color: Colors.grey.shade600,
-                              size: 20.0,
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-
-            SizedBox(
-              height: 70,
-              child: PageView(
-                scrollDirection: Axis.horizontal,
+              SmoothPageIndicator(
                 controller: pageControl,
-                children: [
-                  myCard(),
-                  myCard(),
-                  myCard(),
-                ],
+                count: 3,
+                effect: WormEffect(dotWidth: 8, dotHeight: 8),
               ),
-            ),
-            // Padding(
-            //   padding: const EdgeInsets.fromLTRB(0, 1, 0, 1),
-            //   child: SmoothPageIndicator(
-            //     controller: pageControl, // Use the same controller here
-            //     count: 3, // Change this to the number of pages (cards)
-            //     effect: WormEffect(), // Use your preferred effect
-            //     // onDotClicked: (index) {
-            //     //   // Handle dot click if needed
-            //     // },
-            //   ),
-            // ),
-          ],
+            ],
+          ),
         ),
       ),
+
+      // nav bar starts here
       bottomNavigationBar: BottomAppBar(
         height: 70,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
+            MaterialButton(
+              onPressed: () => {},
               child: Column(
                 children: [
                   CircleAvatar(
@@ -440,7 +378,8 @@ class _MyOpayState extends State<MyOpay> {
                 ],
               ),
             ),
-            Container(
+            MaterialButton(
+              onPressed: () => {rewardPage()},
               child: Column(
                 children: [
                   Icon(
@@ -452,7 +391,9 @@ class _MyOpayState extends State<MyOpay> {
                 ],
               ),
             ),
-            Container(
+
+            MaterialButton(
+              onPressed: () => {},
               child: Column(
                 children: [
                   Icon(
@@ -464,7 +405,8 @@ class _MyOpayState extends State<MyOpay> {
                 ],
               ),
             ),
-            Container(
+            MaterialButton(
+              onPressed: () => {},
               child: Column(
                 children: [
                   Icon(
@@ -476,18 +418,19 @@ class _MyOpayState extends State<MyOpay> {
                 ],
               ),
             ),
-            Container(
-              child: Column(
-                children: [
-                  Icon(
-                    Icons.account_circle_outlined,
-                    color: Colors.black54,
-                    size: 25,
-                  ),
-                  MyTexts(color: Colors.black54, text: 'Me', fontSize: .9)
-                ],
-              ),
-            ),
+            // MaterialButton(
+            //   onPressed: () => {},
+            //   child: Column(
+            //     children: [
+            //       Icon(
+            //         Icons.account_circle_outlined,
+            //         color: Colors.black54,
+            //         size: 25,
+            //       ),
+            //       MyTexts(color: Colors.black54, text: 'Me', fontSize: .9)
+            //     ],
+            //   ),
+            // ),
           ],
         ),
       ),
