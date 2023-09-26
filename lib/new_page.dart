@@ -17,7 +17,11 @@ class _myNewPageState extends State<myNewPage> {
       backgroundColor: Colors.purple[50],
       appBar: AppBar(
         title: MyTexts(
-            color: Colors.purple.shade600, text: 'B U T T O N', fontSize: 1.5),
+          color: Colors.purple.shade600,
+          text: 'B U T T O N',
+          fontSize: 1.5,
+          fontWeight: FontWeight.normal,
+        ),
       ),
       body: SingleChildScrollView(
         child: SizedBox(
@@ -31,9 +35,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -43,9 +49,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -55,9 +63,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -67,9 +77,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -79,9 +91,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -91,9 +105,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -103,9 +119,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -115,9 +133,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -127,9 +147,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -139,9 +161,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -151,9 +175,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -163,9 +189,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -175,9 +203,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -187,9 +217,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -199,9 +231,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -211,9 +245,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -223,9 +259,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -235,9 +273,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -247,9 +287,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -259,9 +301,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -271,9 +315,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -283,9 +329,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -295,9 +343,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -307,9 +357,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -319,9 +371,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -331,9 +385,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -343,9 +399,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple,
-                          text: 'click here',
-                          fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click here',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
               Expanded(
@@ -355,7 +413,11 @@ class _myNewPageState extends State<myNewPage> {
                   child: ElevatedButton(
                       onPressed: () => {},
                       child: MyTexts(
-                          color: Colors.purple, text: 'click', fontSize: 1.2)),
+                        color: Colors.purple,
+                        text: 'click',
+                        fontSize: 1.2,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
               ),
             ],

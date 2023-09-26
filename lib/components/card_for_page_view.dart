@@ -46,13 +46,17 @@ class myCard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           MyTexts(
-                              color: Colors.black,
-                              text: 'Refer & Earn',
-                              fontSize: 1.3),
+                            color: Colors.black,
+                            text: 'Refer & Earn',
+                            fontSize: 1.3,
+                            fontWeight: FontWeight.normal,
+                          ),
                           MyTexts(
-                              color: Colors.black54,
-                              text: 'Earn N800 Cashback per referral',
-                              fontSize: 1.1)
+                            color: Colors.black54,
+                            text: 'Earn N800 Cashback per referral',
+                            fontSize: 1.1,
+                            fontWeight: FontWeight.normal,
+                          )
                         ],
                       ),
                     ),

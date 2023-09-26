@@ -19,7 +19,11 @@ class _myTabViewState extends State<myTabView> {
         appBar: AppBar(
           backgroundColor: Colors.grey[800],
           title: const MyTexts(
-              color: Colors.orange, text: 'T A B  B A R', fontSize: 2),
+            color: Colors.orange,
+            text: 'T A B  B A R',
+            fontSize: 2,
+            fontWeight: FontWeight.normal,
+          ),
           bottom: TabBar(tabs: [
             Tab(
               icon: Icon(
@@ -48,19 +52,31 @@ class _myTabViewState extends State<myTabView> {
           Container(
             child: Center(
                 child: MyTexts(
-                    color: Colors.white60, text: 'H O M E', fontSize: 2)),
+              color: Colors.white60,
+              text: 'H O M E',
+              fontSize: 2,
+              fontWeight: FontWeight.normal,
+            )),
             color: Colors.brown[400],
           ),
           Container(
             child: Center(
                 child: MyTexts(
-                    color: Colors.white60, text: 'SETTINGS', fontSize: 2)),
+              color: Colors.white60,
+              text: 'SETTINGS',
+              fontSize: 2,
+              fontWeight: FontWeight.normal,
+            )),
             color: Colors.grey[500],
           ),
           Container(
             child: Center(
                 child: MyTexts(
-                    color: Colors.white60, text: 'PROFILE', fontSize: 2)),
+              color: Colors.white60,
+              text: 'PROFILE',
+              fontSize: 2,
+              fontWeight: FontWeight.normal,
+            )),
             color: Colors.blueGrey[400],
           ),
         ]),

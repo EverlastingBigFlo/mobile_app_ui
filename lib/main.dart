@@ -4,7 +4,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:my_opay/components/card_for_page_view.dart';
-import 'package:my_opay/reward_page.dart';
+import 'package:my_opay/pages/airtime.dart';
+import 'package:my_opay/pages/reward_page.dart';
+// import 'package:my_opay/form.dart';
+// import 'package:my_opay/reward_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 // import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 // import 'package:my_opay/pages/tab_view.dart';
@@ -24,31 +27,41 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          // This is the theme of your application.
-          //
-          // TRY THIS: Try running your application with "flutter run". You'll see
-          // the application has a blue toolbar. Then, without quitting the app,
-          // try changing the seedColor in the colorScheme below to Colors.green
-          // and then invoke "hot reload" (save your changes or press the "hot
-          // reload" button in a Flutter-supported IDE, or press "r" if you used
-          // the command line to start the app).
-          //
-          // Notice that the counter didn't reset back to zero; the application
-          // state is not lost during the reload. To reset the state, use hot
-          // restart instead.
-          //
-          // This works for code too, not just values: Most code changes can be
-          // tested with just a hot reload.
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        home: const MyOpay()
-        // rewardPage(),
-        // home: const myNewPage(),
-        // home: const myTabView(),
-        );
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => MyOpay(),
+        'reward': (context) => rewardPage(),
+        'airtime': (context) => airtime(),
+      },
+      theme: ThemeData(
+        // This is the theme of your application.
+        //
+        // TRY THIS: Try running your application with "flutter run". You'll see
+        // the application has a blue toolbar. Then, without quitting the app,
+        // try changing the seedColor in the colorScheme below to Colors.green
+        // and then invoke "hot reload" (save your changes or press the "hot
+        // reload" button in a Flutter-supported IDE, or press "r" if you used
+        // the command line to start the app).
+        //
+        // Notice that the counter didn't reset back to zero; the application
+        // state is not lost during the reload. To reset the state, use hot
+        // restart instead.
+        //
+        // This works for code too, not just values: Most code changes can be
+        // tested with just a hot reload.
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+
+      // const MyOpay()
+
+      // const MyForm(),
+      // MyRegistrationForm(),
+      // const myNewPage(),
+      // const myTabView(),
+    );
   }
 }
 
@@ -60,6 +73,8 @@ class MyOpay extends StatefulWidget {
 }
 
 class _MyOpayState extends State<MyOpay> {
+  // custom widget for the second card
+
   List mylist = [
     {'text': 'Airtime', 'icon': Icons.app_settings_alt_rounded},
     {'text': 'Data', 'icon': Icons.mobile_screen_share_sharp},
@@ -85,12 +100,11 @@ class _MyOpayState extends State<MyOpay> {
 
   autoSlide() {
     mytime = Timer.periodic(Duration(seconds: 2), (timer) {
-      if (currPage >= 2) {
+      if (currPage >= 3) {
         currPage = 0;
       } else {
         currPage++;
       }
-
 
       pageControl.animateToPage(
         currPage,
@@ -106,6 +120,7 @@ class _MyOpayState extends State<MyOpay> {
     pageControl.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -121,6 +136,7 @@ class _MyOpayState extends State<MyOpay> {
                     color: Colors.black,
                     text: 'Hi,User',
                     fontSize: 1,
+                    fontWeight: FontWeight.normal,
                   )
                 ],
               ),
@@ -163,11 +179,13 @@ class _MyOpayState extends State<MyOpay> {
                                 color: Colors.white,
                                 text: 'Available Balance',
                                 fontSize: 1.1,
+                                fontWeight: FontWeight.normal,
                               ),
                               MyTexts(
                                 color: Colors.white,
                                 text: 'Transaction History',
                                 fontSize: 1.1,
+                                fontWeight: FontWeight.normal,
                               ),
                             ],
                           ),
@@ -180,18 +198,20 @@ class _MyOpayState extends State<MyOpay> {
                                 color: Colors.white,
                                 text: '****',
                                 fontSize: 1.1,
+                                fontWeight: FontWeight.normal,
                               ),
                             ],
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.fromLTRB(0, 10, 0, 20),
+                          margin: EdgeInsets.fromLTRB(0, 10, 0, 15),
                           child: Row(
                             children: [
                               MyTexts(
                                 color: Colors.white,
                                 text: '& Cashback****',
                                 fontSize: 1.1,
+                                fontWeight: FontWeight.normal,
                               ),
                             ],
                           ),
@@ -211,6 +231,7 @@ class _MyOpayState extends State<MyOpay> {
                                       color: Colors.white,
                                       text: 'Add money',
                                       fontSize: 1.1,
+                                      fontWeight: FontWeight.normal,
                                     )
                                   ],
                                 ),
@@ -226,6 +247,7 @@ class _MyOpayState extends State<MyOpay> {
                                       color: Colors.white,
                                       text: 'Transfer',
                                       fontSize: 1.1,
+                                      fontWeight: FontWeight.normal,
                                     )
                                   ],
                                 ),
@@ -241,6 +263,7 @@ class _MyOpayState extends State<MyOpay> {
                                       color: Colors.white,
                                       text: 'Withdraw',
                                       fontSize: 1.1,
+                                      fontWeight: FontWeight.normal,
                                     )
                                   ],
                                 ),
@@ -267,28 +290,42 @@ class _MyOpayState extends State<MyOpay> {
                         children: [
                           ...mylist.map((e) {
                             return Padding(
-                              padding: const EdgeInsets.all(7.0),
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(7.0),
-                                    child: CircleAvatar(
-                                      backgroundColor: Colors.green[50],
-                                      radius: 25,
-                                      child: Icon(
-                                        e['icon'],
-                                        size: 25,
-                                        color: Colors.green,
+                              padding: const EdgeInsets.all(5.0),
+                              child: SizedBox(
+                                width: 80,
+                                // height: 100,
+                                child: MaterialButton(
+                                  onPressed: () {
+                                    if (e['text'] == 'Airtime') {
+                                      Navigator.pushNamed(context, 'airtime');
+                                    } else if (e['text'] == 'Data') {
+                                    } else if (e['text'] == 'Betting') {
+                                    } else if (e['text'] == 'TV') {}
+                                  },
+                                  child: Column(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(7.0),
+                                        child: CircleAvatar(
+                                          backgroundColor: Colors.green[50],
+                                          radius: 15,
+                                          child: Icon(
+                                            e['icon'],
+                                            size: 15,
+                                            color: Colors.green,
+                                          ),
+                                        ),
                                       ),
-                                    ),
+                                      Text(e['text'])
+                                    ],
                                   ),
-                                  Text(e['text'])
-                                ],
+                                ),
                               ),
                             );
                           })
                         ],
                       ),
+
                       // first widget ends here
 
                       Row(
@@ -296,17 +333,17 @@ class _MyOpayState extends State<MyOpay> {
                         children: [
                           ...mySecondList.map((e) {
                             return Padding(
-                              padding: const EdgeInsets.all(7.0),
+                              padding: const EdgeInsets.all(5.0),
                               child: Column(
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(1),
+                                    padding: const EdgeInsets.all(7.0),
                                     child: CircleAvatar(
                                       backgroundColor: Colors.green[50],
-                                      radius: 25,
+                                      radius: 15,
                                       child: Icon(
                                         e['icon'],
-                                        size: 25,
+                                        size: 15,
                                         color: Colors.green,
                                       ),
                                     ),
@@ -358,7 +395,7 @@ class _MyOpayState extends State<MyOpay> {
       bottomNavigationBar: BottomAppBar(
         height: 70,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             MaterialButton(
               onPressed: () => {},
@@ -370,28 +407,36 @@ class _MyOpayState extends State<MyOpay> {
                     child: Icon(
                       Icons.paypal,
                       color: Colors.white,
-                      size: 20,
+                      size: 15,
                     ),
                   ),
                   MyTexts(
-                      color: Colors.green.shade500, text: 'Home', fontSize: .9)
+                    color: Colors.green.shade500,
+                    text: 'Home',
+                    fontSize: .9,
+                    fontWeight: FontWeight.normal,
+                  )
                 ],
               ),
             ),
             MaterialButton(
-              onPressed: () => {rewardPage()},
+              onPressed: () => {Navigator.pushNamed(context, 'reward')},
               child: Column(
                 children: [
                   Icon(
                     Icons.diamond_sharp,
                     color: Colors.black54,
-                    size: 25,
+                    size: 15,
                   ),
-                  MyTexts(color: Colors.black54, text: 'Rewards', fontSize: .9)
+                  MyTexts(
+                    color: Colors.black54,
+                    text: 'Rewards',
+                    fontSize: .9,
+                    fontWeight: FontWeight.normal,
+                  )
                 ],
               ),
             ),
-
             MaterialButton(
               onPressed: () => {},
               child: Column(
@@ -399,9 +444,14 @@ class _MyOpayState extends State<MyOpay> {
                   Icon(
                     Icons.insert_chart_sharp,
                     color: Colors.black54,
-                    size: 25,
+                    size: 15,
                   ),
-                  MyTexts(color: Colors.black54, text: 'Finance', fontSize: .9)
+                  MyTexts(
+                    color: Colors.black54,
+                    text: 'Finance',
+                    fontSize: .9,
+                    fontWeight: FontWeight.normal,
+                  )
                 ],
               ),
             ),
@@ -412,9 +462,14 @@ class _MyOpayState extends State<MyOpay> {
                   Icon(
                     Icons.credit_card,
                     color: Colors.black54,
-                    size: 25,
+                    size: 15,
                   ),
-                  MyTexts(color: Colors.black54, text: 'Cards', fontSize: .9)
+                  MyTexts(
+                    color: Colors.black54,
+                    text: 'Cards',
+                    fontSize: .9,
+                    fontWeight: FontWeight.normal,
+                  )
                 ],
               ),
             ),
@@ -425,9 +480,14 @@ class _MyOpayState extends State<MyOpay> {
             //       Icon(
             //         Icons.account_circle_outlined,
             //         color: Colors.black54,
-            //         size: 25,
+            //         size: 15,
             //       ),
-            //       MyTexts(color: Colors.black54, text: 'Me', fontSize: .9)
+            //       MyTexts(
+            //         color: Colors.black54,
+            //         text: 'Me',
+            //         fontSize: .9,
+            //         fontWeight: FontWeight.bold,
+            //       )
             //     ],
             //   ),
             // ),
