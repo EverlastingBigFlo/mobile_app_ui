@@ -21,7 +21,7 @@ class _airtimeState extends State<airtime> {
         title: Text(
           'Airtime',
           style: TextStyle(
-            fontSize: 18, // Adjust the font size as needed
+            fontSize: 15, // Adjust the font size as needed
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -37,7 +37,7 @@ class _airtimeState extends State<airtime> {
           ),
         ],
       ),
-      // backgroundColor: Colors.green,
+      backgroundColor: Colors.grey[100],
       body: Column(
         children: [
           Padding(
@@ -67,6 +67,16 @@ class _airtimeState extends State<airtime> {
                     value: dropdownValue,
                     icon: Icon(Icons.arrow_drop_down_rounded),
                     style: const TextStyle(color: Colors.black26),
+                    underline: Container(
+                      // Remove underline border
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                            color: Colors.transparent,
+                          ),
+                        ),
+                      ),
+                    ),
                     onChanged: (String? newValue) {
                       setState(() {
                         dropdownValue = newValue!;
@@ -116,7 +126,6 @@ class _airtimeState extends State<airtime> {
                                 image: AssetImage('lib/assets/glo-logo.jpeg'),
                                 fit: BoxFit.cover,
                                 width: 30,
-                                // height: 30,
                               ),
                             ), // Use AssetImage within Image widget
                             SizedBox(width: 5),
@@ -133,11 +142,11 @@ class _airtimeState extends State<airtime> {
                                 image:
                                     AssetImage('lib/assets/9mobile-logo.png'),
                                 fit: BoxFit.cover,
-                                width: 5,
-                                // height: 30,
+                                width: 30,
                               ),
-                            ), // Use AssetImage within Image widget
-                            // SizedBox(width: 5),
+                            ),
+                            // Use AssetImage within Image widget
+                            SizedBox(width: 5),
                             Text('9Mobile'),
                           ],
                         ),
@@ -145,8 +154,8 @@ class _airtimeState extends State<airtime> {
                     ],
                   ),
                   SizedBox(
-                    width: 240,
-                    // height: 100,
+                    width: 230,
+                    height: 60,
                     child: TextField(
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
@@ -154,6 +163,7 @@ class _airtimeState extends State<airtime> {
                           suffixIcon: Icon(Icons.keyboard_arrow_down_sharp)),
                     ),
                   ),
+                  // ignore: avoid_unnecessary_containers
                   Container(
                     child: Icon(
                       Icons.contact_emergency,
@@ -164,6 +174,362 @@ class _airtimeState extends State<airtime> {
               ),
             ),
           ),
+
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              color: Colors.white,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Top up'),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Expanded(
+                          child: Card(
+                            child: Container(
+                              height: 100,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Image.asset(
+                                              'lib/assets/nigeria-naira-currency-symbol.png',
+                                              width: 10,
+                                            ),
+                                            Text(
+                                              '50.00',
+                                              style: TextStyle(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            Image.asset(
+                                              'lib/assets/nigeria-naira-currency-symbol.png',
+                                              width: 8,
+                                              color: Colors.green,
+                                            ),
+                                            Text(
+                                              '0.5 Cashback',
+                                              style: TextStyle(
+                                                fontSize: 12,
+                                                color: Colors.green,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Card(
+                            child: Container(
+                              height: 100,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Image.asset(
+                                              'lib/assets/nigeria-naira-currency-symbol.png',
+                                              width: 10,
+                                            ),
+                                            Text(
+                                              '100.00',
+                                              style: TextStyle(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            Image.asset(
+                                              'lib/assets/nigeria-naira-currency-symbol.png',
+                                              width: 8,
+                                              color: Colors.green,
+                                            ),
+                                            Text(
+                                              '1 Cashback',
+                                              style: TextStyle(
+                                                fontSize: 12,
+                                                color: Colors.green,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Card(
+                            child: Container(
+                              height: 100,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Image.asset(
+                                              'lib/assets/nigeria-naira-currency-symbol.png',
+                                              width: 10,
+                                            ),
+                                            Text(
+                                              '200.00',
+                                              style: TextStyle(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            Image.asset(
+                                              'lib/assets/nigeria-naira-currency-symbol.png',
+                                              width: 8,
+                                              color: Colors.green,
+                                            ),
+                                            Text(
+                                              '2 Cashback',
+                                              style: TextStyle(
+                                                fontSize: 12,
+                                                color: Colors.green,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Expanded(
+                          child: Card(
+                            child: Container(
+                              height: 100,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Image.asset(
+                                              'lib/assets/nigeria-naira-currency-symbol.png',
+                                              width: 10,
+                                            ),
+                                            Text(
+                                              '500.00',
+                                              style: TextStyle(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            Image.asset(
+                                              'lib/assets/nigeria-naira-currency-symbol.png',
+                                              width: 8,
+                                              color: Colors.green,
+                                            ),
+                                            Text(
+                                              '5 Cashback',
+                                              style: TextStyle(
+                                                fontSize: 12,
+                                                color: Colors.green,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Card(
+                            child: Container(
+                              height: 100,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Image.asset(
+                                              'lib/assets/nigeria-naira-currency-symbol.png',
+                                              width: 10,
+                                            ),
+                                            Text(
+                                              '1000.00',
+                                              style: TextStyle(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            Image.asset(
+                                              'lib/assets/nigeria-naira-currency-symbol.png',
+                                              width: 8,
+                                              color: Colors.green,
+                                            ),
+                                            Text(
+                                              '10 Cashback',
+                                              style: TextStyle(
+                                                fontSize: 12,
+                                                color: Colors.green,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Card(
+                            child: Container(
+                              height: 100,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Image.asset(
+                                              'lib/assets/nigeria-naira-currency-symbol.png',
+                                              width: 10,
+                                            ),
+                                            Text(
+                                              '2000.00',
+                                              style: TextStyle(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            Image.asset(
+                                              'lib/assets/nigeria-naira-currency-symbol.png',
+                                              width: 8,
+                                              color: Colors.green,
+                                            ),
+                                            Text(
+                                              '20 Cashback',
+                                              style: TextStyle(
+                                                fontSize: 12,
+                                                color: Colors.green,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );
