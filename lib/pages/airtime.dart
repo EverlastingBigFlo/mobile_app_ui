@@ -37,7 +37,7 @@ class _airtimeState extends State<airtime> {
           ),
         ],
       ),
-      backgroundColor: Colors.grey[100],
+      backgroundColor: Colors.grey[200],
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -538,20 +538,34 @@ class _airtimeState extends State<airtime> {
                     Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        // mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Image.asset(
                             'lib/assets/nigeria-naira-currency-symbol.png',
                             height: 20,
                           ),
-                          SizedBox(
-                            width: 230,
-                            height: 60,
+                          Expanded(
                             child: TextField(
                               keyboardType: TextInputType.number,
-                              decoration:
-                                  InputDecoration(border: InputBorder.none),
+                              decoration: InputDecoration(
+                                contentPadding: EdgeInsets.only(left: 15),
+                                hintText: '50 - 500,000',
+                                hintStyle: TextStyle(
+                                    color: Colors.black26, fontSize: 17),
+                                // ),
+                              ),
                             ),
                           ),
+                          ElevatedButton(
+                              style: ButtonStyle(
+                                  backgroundColor: MaterialStatePropertyAll(
+                                      Colors.green[200])),
+                              onPressed: () => {},
+                              child: Text(
+                                'Pay',
+                                style: TextStyle(color: Colors.white),
+                              ))
                         ],
                       ),
                     )
@@ -559,6 +573,36 @@ class _airtimeState extends State<airtime> {
                 ),
               ),
             ),
+            Container(
+              child: Row(
+                children: [
+                  Text('Buy airtime fast & easy with *955#'),
+                  InkWell(
+                    onTap: () {
+                      // Your onTap callback code here
+                    },
+                    borderRadius: BorderRadius.circular(
+                        20), // Adjust the border radius as needed
+                    child: Ink(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.lightGreen[50],
+                      ),
+                      child: Padding(
+                        padding:
+                            EdgeInsets.all(5.0), // Adjust the padding as needed
+                        child: Icon(
+                          Icons.phone, // Replace with your desired icon
+                          color:
+                              Colors.green, // Adjust the icon color as needed
+                          size: 24, // Adjust the icon size as needed
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
