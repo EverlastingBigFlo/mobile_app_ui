@@ -37,7 +37,7 @@ class _airtimeState extends State<airtime> {
           ),
         ],
       ),
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Colors.grey[100],
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -538,29 +538,30 @@ class _airtimeState extends State<airtime> {
                     Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        // mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Image.asset(
                             'lib/assets/nigeria-naira-currency-symbol.png',
                             height: 20,
                           ),
+                          SizedBox(
+                            width: 15,
+                          ),
                           Expanded(
-                            child: TextField(
-                              keyboardType: TextInputType.number,
-                              decoration: InputDecoration(
-                                contentPadding: EdgeInsets.only(left: 15),
-                                hintText: '50 - 500,000',
-                                hintStyle: TextStyle(
-                                    color: Colors.black26, fontSize: 17),
-                                // ),
+                              child: TextField(
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                              hintText: '50 - 500.000',
+                              hintStyle: TextStyle(color: Colors.grey[400]),
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 226, 218, 218)),
                               ),
                             ),
-                          ),
+                          )),
                           ElevatedButton(
                               style: ButtonStyle(
                                   backgroundColor: MaterialStatePropertyAll(
-                                      Colors.green[200])),
+                                      Colors.green[300])),
                               onPressed: () => {},
                               child: Text(
                                 'Pay',
@@ -573,34 +574,45 @@ class _airtimeState extends State<airtime> {
                 ),
               ),
             ),
-            Container(
-              child: Row(
-                children: [
-                  Text('Buy airtime fast & easy with *955#'),
-                  InkWell(
-                    onTap: () {
-                      // Your onTap callback code here
-                    },
-                    borderRadius: BorderRadius.circular(
-                        20), // Adjust the border radius as needed
-                    child: Ink(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.lightGreen[50],
-                      ),
-                      child: Padding(
-                        padding:
-                            EdgeInsets.all(5.0), // Adjust the padding as needed
-                        child: Icon(
-                          Icons.phone, // Replace with your desired icon
-                          color:
-                              Colors.green, // Adjust the icon color as needed
-                          size: 24, // Adjust the icon size as needed
-                        ),
+            Padding(
+              padding: const EdgeInsets.all(14.0),
+              child: Container(
+                height: 70,
+                decoration: BoxDecoration(
+                  borderRadius:
+                      BorderRadius.circular(20), // Add border radius here
+                  color: Colors.white,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      'Buy airtime fast & easy with *955#',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                  )
-                ],
+                    Container(
+                      width: 36,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.green[50],
+                      ),
+                      child: IconButton(
+                        onPressed: () {
+                          // Add your onPressed logic here
+                        },
+                        icon: Icon(
+                          Icons.phone,
+                          color: Colors.green,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
             )
           ],
