@@ -621,6 +621,7 @@ class _airtimeState extends State<airtime> {
                   color: Colors.white,
                 ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'Airtime service',
@@ -640,15 +641,22 @@ class _airtimeState extends State<airtime> {
                           ),
                         ),
                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              'USSD enquiry',
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                'USSD enquiry',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
                             ),
-                            Text(
-                              'Check phone balance and more',
-                              style: TextStyle(color: Colors.grey),
-                            )
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                'Check phone balance and more',
+                                style: TextStyle(color: Colors.grey),
+                              ),
+                            ),
                           ],
                         )
                       ],
