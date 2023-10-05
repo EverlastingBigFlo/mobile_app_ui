@@ -613,16 +613,48 @@ class _airtimeState extends State<airtime> {
                 ),
               ),
             ),
-            Container(
-              decoration:
-                  BoxDecoration(shape: BoxShape.circle, color: Colors.white),
-              child: Column(
-                children: [
-                  Text(
-                    'Airtime service',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  )
-                ],
+            Padding(
+              padding: const EdgeInsets.fromLTRB(14, 0, 14, 0),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white,
+                ),
+                child: Column(
+                  children: [
+                    Text(
+                      'Airtime service',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(14.0),
+                          child: CircleAvatar(
+                            backgroundColor: Colors.green[50],
+                            child: Icon(
+                              Icons.send_to_mobile_outlined,
+                              color: Colors.green,
+                            ),
+                          ),
+                        ),
+                        Column(
+                          children: [
+                            Text(
+                              'USSD enquiry',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              'Check phone balance and more',
+                              style: TextStyle(color: Colors.grey),
+                            )
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ),
             )
           ],
