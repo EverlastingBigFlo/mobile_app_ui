@@ -55,8 +55,6 @@ class _airtimeState extends State<airtime> {
                 ),
               ),
             ),
-            // Ad card ends here
-
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: Container(
@@ -176,14 +174,14 @@ class _airtimeState extends State<airtime> {
                 ),
               ),
             ),
-
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+              padding: const EdgeInsets.all(14.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius:
+                      BorderRadius.circular(20), // Add border radius here
+                  color: Colors.white,
                 ),
-                color: Colors.white,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
