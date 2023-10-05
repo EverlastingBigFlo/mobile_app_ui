@@ -608,9 +608,21 @@ class _airtimeState extends State<airtime> {
                           color: Colors.green,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
+              ),
+            ),
+            Container(
+              decoration:
+                  BoxDecoration(shape: BoxShape.circle, color: Colors.white),
+              child: Column(
+                children: [
+                  Text(
+                    'Airtime service',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  )
+                ],
               ),
             )
           ],
