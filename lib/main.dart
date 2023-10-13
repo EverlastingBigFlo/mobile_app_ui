@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:my_opay/components/card_for_page_view.dart';
 import 'package:my_opay/pages/airtime.dart';
 import 'package:my_opay/pages/reward_page.dart';
+import 'package:my_opay/pages/tv.dart';
 // import 'package:my_opay/form.dart';
 // import 'package:my_opay/reward_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => MyOpay(),
         'reward': (context) => rewardPage(),
         'airtime': (context) => airtime(),
+        'TV': (context) => tv(),
       },
       theme: ThemeData(
         // This is the theme of your application.
@@ -300,7 +302,9 @@ class _MyOpayState extends State<MyOpay> {
                                       Navigator.pushNamed(context, 'airtime');
                                     } else if (e['text'] == 'Data') {
                                     } else if (e['text'] == 'Betting') {
-                                    } else if (e['text'] == 'TV') {}
+                                    } else if (e['text'] == 'TV') {
+                                      Navigator.pushNamed(context, 'TV');
+                                    }
                                   },
                                   child: Column(
                                     children: [
