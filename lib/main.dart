@@ -390,107 +390,111 @@ class _MyOpayState extends State<MyOpay> {
           ),
         ),
       ),
-
-      // nav bar starts here
       bottomNavigationBar: BottomAppBar(
-        height: 70,
+        color: Colors.white,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            MaterialButton(
-              onPressed: () => {},
-              child: Column(
-                children: [
-                  CircleAvatar(
-                    backgroundColor: Colors.green[500],
-                    radius: 12,
-                    child: Icon(
-                      Icons.paypal,
-                      color: Colors.white,
-                      size: 15,
+            Expanded(
+              child: MaterialButton(
+                onPressed: () => {},
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.green[500],
+                      radius: 12,
+                      child: Icon(
+                        Icons.paypal,
+                        color: Colors.white,
+                        size: 20,
+                      ),
                     ),
-                  ),
-                  MyTexts(
-                    color: Colors.green.shade500,
-                    text: 'Home',
-                    fontSize: .9,
-                    fontWeight: FontWeight.normal,
-                  )
-                ],
+                    Text(
+                      'Home',
+                      style: TextStyle(fontSize: 8, color: Colors.black54),
+                    )
+                  ],
+                ),
               ),
             ),
-            MaterialButton(
-              onPressed: () => {Navigator.pushNamed(context, 'reward')},
-              child: Column(
-                children: [
-                  Icon(
-                    Icons.diamond_sharp,
-                    color: Colors.black54,
-                    size: 15,
-                  ),
-                  MyTexts(
-                    color: Colors.black54,
-                    text: 'Rewards',
-                    fontSize: .9,
-                    fontWeight: FontWeight.normal,
-                  )
-                ],
+            Expanded(
+              child: MaterialButton(
+                onPressed: () => {Navigator.pushNamed(context, 'reward')},
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.diamond_sharp,
+                      color: Colors.black54,
+                      size: 20,
+                    ),
+                    Text(
+                      'Rewards',
+                      style: TextStyle(fontSize: 8, color: Colors.black54),
+                    )
+                  ],
+                ),
               ),
             ),
-            MaterialButton(
-              onPressed: () => {},
-              child: Column(
-                children: [
-                  Icon(
-                    Icons.insert_chart_sharp,
-                    color: Colors.black54,
-                    size: 15,
-                  ),
-                  MyTexts(
-                    color: Colors.black54,
-                    text: 'Finance',
-                    fontSize: .9,
-                    fontWeight: FontWeight.normal,
-                  )
-                ],
+            Expanded(
+              child: MaterialButton(
+                onPressed: () => {},
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.insert_chart_sharp,
+                      color: Colors.black54,
+                      size: 20,
+                    ),
+                    Text(
+                      'Finance',
+                      style: TextStyle(fontSize: 9, color: Colors.black54),
+                    )
+                  ],
+                ),
               ),
             ),
-            MaterialButton(
-              onPressed: () => {},
-              child: Column(
-                children: [
-                  Icon(
-                    Icons.credit_card,
-                    color: Colors.black54,
-                    size: 15,
-                  ),
-                  MyTexts(
-                    color: Colors.black54,
-                    text: 'Cards',
-                    fontSize: .9,
-                    fontWeight: FontWeight.normal,
-                  )
-                ],
+            Expanded(
+              child: MaterialButton(
+                onPressed: () => {},
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.credit_card,
+                      color: Colors.black54,
+                      size: 20,
+                    ),
+                    Text(
+                      'Cards',
+                      style: TextStyle(fontSize: 8, color: Colors.black54),
+                    )
+                  ],
+                ),
               ),
             ),
-            // MaterialButton(
-            //   onPressed: () => {},
-            //   child: Column(
-            //     children: [
-            //       Icon(
-            //         Icons.account_circle_outlined,
-            //         color: Colors.black54,
-            //         size: 15,
-            //       ),
-            //       MyTexts(
-            //         color: Colors.black54,
-            //         text: 'Me',
-            //         fontSize: .9,
-            //         fontWeight: FontWeight.bold,
-            //       )
-            //     ],
-            //   ),
-            // ),
+            Expanded(
+              child: MaterialButton(
+                onPressed: () => {},
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.account_circle_outlined,
+                      color: Colors.black54,
+                      size: 20,
+                    ),
+                    Text(
+                      'Me',
+                      style: TextStyle(fontSize: 8, color: Colors.black54),
+                    )
+                    // MyTexts(
+                    //   color: Colors.black54,
+                    //   text: 'Me',
+                    //   fontSize: .6,
+                    //   fontWeight: FontWeight.bold,
+                    // ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
