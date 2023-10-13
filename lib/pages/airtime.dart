@@ -623,12 +623,16 @@ class _airtimeState extends State<airtime> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Airtime service',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Text(
+                        'Airtime service',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 17),
+                      ),
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(14.0),
@@ -643,21 +647,20 @@ class _airtimeState extends State<airtime> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                'USSD enquiry',
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
+                            Text(
+                              'USSD enquiry',
+                              style: TextStyle(fontWeight: FontWeight.bold),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                'Check phone balance and more',
-                                style: TextStyle(color: Colors.grey),
-                              ),
+                            Text(
+                              'Check phone balance and more',
+                              style: TextStyle(color: Colors.grey),
                             ),
                           ],
+                        ),
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.grey,
+                          size: 13,
                         )
                       ],
                     )
