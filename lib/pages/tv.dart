@@ -32,7 +32,10 @@ class _tvState extends State<tv> {
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Container(
-                color: Colors.white,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
                 padding: EdgeInsets.all(12.0),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -42,7 +45,9 @@ class _tvState extends State<tv> {
                       Text(
                         'Service Provider',
                         style: TextStyle(
-                            fontSize: 17, fontWeight: FontWeight.w500),
+                            fontSize: 17,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.grey),
                       ),
                       Row(
                         children: [
@@ -77,8 +82,11 @@ class _tvState extends State<tv> {
                                         // height: 30,
                                       ),
                                     ), // Use AssetImage within Image widget
-                                    SizedBox(width: 5),
-                                    Text('DSTV'),
+                                    SizedBox(width: 10),
+                                    Text(
+                                      'DSTV',
+                                      style: TextStyle(fontSize: 18),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -95,8 +103,11 @@ class _tvState extends State<tv> {
                                         height: 40,
                                       ),
                                     ), // Use AssetImage within Image widget
-                                    SizedBox(width: 5),
-                                    Text('GOTV'),
+                                    SizedBox(width: 10),
+                                    Text(
+                                      'GOTV',
+                                      style: TextStyle(fontSize: 18),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -113,8 +124,11 @@ class _tvState extends State<tv> {
                                         height: 40,
                                       ),
                                     ), // Use AssetImage within Image widget
-                                    SizedBox(width: 5),
-                                    Text('Startimes'),
+                                    SizedBox(width: 10),
+                                    Text(
+                                      'Startimes',
+                                      style: TextStyle(fontSize: 18),
+                                    ),
                                   ],
                                 ),
                               ),
