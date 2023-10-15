@@ -10,7 +10,7 @@ class tv extends StatefulWidget {
 }
 
 class _tvState extends State<tv> {
-  String dropdownValue = 'MTN';
+  String dropdownValue = 'DSTV';
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +61,7 @@ class _tvState extends State<tv> {
                         },
                         items: [
                           DropdownMenuItem(
-                            value: 'MTN',
+                            value: 'DSTV',
                             child: Row(
                               children: [
                                 ClipOval(
@@ -78,19 +78,37 @@ class _tvState extends State<tv> {
                             ),
                           ),
                           DropdownMenuItem(
-                            value: 'Airtel',
+                            value: 'GOTV',
                             child: Row(
                               children: [
                                 ClipOval(
                                   child: Image(
                                     image: AssetImage('lib/assets/gotv.webp'),
                                     fit: BoxFit.cover,
-                                    width: 50,
-                                    // height: 30,
+                                    width: 40,
+                                    height: 40,
                                   ),
                                 ), // Use AssetImage within Image widget
                                 SizedBox(width: 5),
                                 Text('GOTV'),
+                              ],
+                            ),
+                          ),
+                          DropdownMenuItem(
+                            value: 'Startimes',
+                            child: Row(
+                              children: [
+                                ClipOval(
+                                  child: Image(
+                                    image:
+                                        AssetImage('lib/assets/startimes.png'),
+                                    fit: BoxFit.cover,
+                                    width: 40,
+                                    height: 40,
+                                  ),
+                                ), // Use AssetImage within Image widget
+                                SizedBox(width: 5),
+                                Text('Startimes'),
                               ],
                             ),
                           ),
