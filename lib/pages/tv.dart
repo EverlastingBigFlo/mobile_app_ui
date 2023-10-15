@@ -49,91 +49,87 @@ class _tvState extends State<tv> {
                             fontWeight: FontWeight.w500,
                             color: Colors.grey),
                       ),
+
+                      //dropdown options start here
                       Row(
                         children: [
-                          DropdownButton<String>(
-                            value: dropdownValue,
-                            icon: Icon(Icons.keyboard_arrow_right_rounded),
-                            underline: Container(
-                              // Remove underline border
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  bottom: BorderSide(
-                                    color: Colors.transparent,
+                          Expanded(
+                            child: DropdownButtonHideUnderline(
+                              // Hide the underline
+                              child: DropdownButton<String>(
+                                value: dropdownValue,
+                                onChanged: (String? newValue) {
+                                  setState(() {
+                                    dropdownValue = newValue!;
+                                  });
+                                },
+                                items: [
+                                  DropdownMenuItem(
+                                    value: 'DSTV',
+                                    child: Row(
+                                      children: [
+                                        ClipOval(
+                                          child: Image(
+                                            image:
+                                                AssetImage('lib/assets/op.png'),
+                                            fit: BoxFit.cover,
+                                            width: 40,
+                                          ),
+                                        ),
+                                        SizedBox(width: 10),
+                                        Text(
+                                          'DSTV',
+                                          style: TextStyle(fontSize: 18),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
+                                  DropdownMenuItem(
+                                    value: 'GOTV',
+                                    child: Row(
+                                      children: [
+                                        ClipOval(
+                                          child: Image(
+                                            image: AssetImage(
+                                                'lib/assets/gotv.webp'),
+                                            fit: BoxFit.cover,
+                                            width: 40,
+                                            height: 40,
+                                          ),
+                                        ),
+                                        SizedBox(width: 10),
+                                        Text(
+                                          'GOTV',
+                                          style: TextStyle(fontSize: 18),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  DropdownMenuItem(
+                                    value: 'Startimes',
+                                    child: Row(
+                                      children: [
+                                        ClipOval(
+                                          child: Image(
+                                            image: AssetImage(
+                                                'lib/assets/startimes.png'),
+                                            fit: BoxFit.cover,
+                                            width: 40,
+                                            height: 40,
+                                          ),
+                                        ),
+                                        SizedBox(width: 10),
+                                        Text(
+                                          'Startimes',
+                                          style: TextStyle(fontSize: 18),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                            onChanged: (String? newValue) {
-                              setState(() {
-                                dropdownValue = newValue!;
-                              });
-                            },
-                            items: [
-                              DropdownMenuItem(
-                                value: 'DSTV',
-                                child: Row(
-                                  children: [
-                                    ClipOval(
-                                      child: Image(
-                                        image: AssetImage('lib/assets/op.png'),
-                                        fit: BoxFit.cover,
-                                        width: 40,
-                                        // height: 30,
-                                      ),
-                                    ), // Use AssetImage within Image widget
-                                    SizedBox(width: 10),
-                                    Text(
-                                      'DSTV',
-                                      style: TextStyle(fontSize: 18),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              DropdownMenuItem(
-                                value: 'GOTV',
-                                child: Row(
-                                  children: [
-                                    ClipOval(
-                                      child: Image(
-                                        image:
-                                            AssetImage('lib/assets/gotv.webp'),
-                                        fit: BoxFit.cover,
-                                        width: 40,
-                                        height: 40,
-                                      ),
-                                    ), // Use AssetImage within Image widget
-                                    SizedBox(width: 10),
-                                    Text(
-                                      'GOTV',
-                                      style: TextStyle(fontSize: 18),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              DropdownMenuItem(
-                                value: 'Startimes',
-                                child: Row(
-                                  children: [
-                                    ClipOval(
-                                      child: Image(
-                                        image: AssetImage(
-                                            'lib/assets/startimes.png'),
-                                        fit: BoxFit.cover,
-                                        width: 40,
-                                        height: 40,
-                                      ),
-                                    ), // Use AssetImage within Image widget
-                                    SizedBox(width: 10),
-                                    Text(
-                                      'Startimes',
-                                      style: TextStyle(fontSize: 18),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          )
+                          ),
                         ],
                       )
                     ],
