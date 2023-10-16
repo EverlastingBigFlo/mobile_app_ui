@@ -146,6 +146,18 @@ class _tvState extends State<tv> {
                 height: 40, // Adjust the height as needed
                 width: 370, // Adjust the height as needed
               ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(10.0))),
+              child: Column(
+                children: [
+                  Row(
+                    children: [Text('Smartcard Number'), Row(children: [Text('Beneficiaries')],)],
+                  )
+                ],
+              ),
             )
           ],
         ),
