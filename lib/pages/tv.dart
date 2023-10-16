@@ -136,6 +136,16 @@ class _tvState extends State<tv> {
                   ),
                 ),
               ),
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(
+                  10.0), // Adjust the border radius as needed
+              child: Image(
+                image: AssetImage('lib/assets/StartimeswithFemi.webp'),
+                fit: BoxFit.cover, // Adjust the fit as needed
+                height: 40, // Adjust the height as needed
+                width: 370, // Adjust the height as needed
+              ),
             )
           ],
         ),
