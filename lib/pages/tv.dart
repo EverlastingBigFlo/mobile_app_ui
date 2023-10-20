@@ -160,16 +160,22 @@ class _tvState extends State<tv> {
                 child: Column(
                   children: [
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Smartcard Number'),
-                        Row(
-                          children: [
-                            Text(
-                              'Beneficiaries',
-                              style: TextStyle(color: Colors.grey),
-                            )
-                          ],
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('Smartcard Number'),
+                              Row(
+                                children: [
+                                  Text(
+                                    'Beneficiaries',
+                                    style: TextStyle(color: Colors.grey),
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         )
                       ],
                     )
