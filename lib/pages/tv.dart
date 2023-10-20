@@ -137,6 +137,8 @@ class _tvState extends State<tv> {
                 ),
               ),
             ),
+
+            // ads code here
             ClipRRect(
               borderRadius: BorderRadius.circular(
                   10.0), // Adjust the border radius as needed
@@ -147,6 +149,8 @@ class _tvState extends State<tv> {
                 width: 370, // Adjust the height as needed
               ),
             ),
+
+            // smart card section here
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
@@ -154,7 +158,18 @@ class _tvState extends State<tv> {
               child: Column(
                 children: [
                   Row(
-                    children: [Text('Smartcard Number'), Row(children: [Text('Beneficiaries')],)],
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Smartcard Number'),
+                      Row(
+                        children: [
+                          Text(
+                            'Beneficiaries',
+                            style: TextStyle(color: Colors.grey),
+                          )
+                        ],
+                      )
+                    ],
                   )
                 ],
               ),
