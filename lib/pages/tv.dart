@@ -151,7 +151,8 @@ class _tvState extends State<tv> {
             ),
 
             // smart card section here
-            Expanded(
+            Padding(
+              padding: const EdgeInsets.all(14.0),
               child: Container(
                 decoration: BoxDecoration(
                     color: Colors.white,
