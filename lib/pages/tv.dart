@@ -271,8 +271,20 @@ class _tvState extends State<tv> {
                       ),
                     ),
                     // days card end here
-                  
-                  
+
+                    // package widget start here
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 5, 0, 10),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Package',
+                            style: TextStyle(
+                                fontSize: 17, fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
