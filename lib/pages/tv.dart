@@ -240,6 +240,26 @@ class _tvState extends State<tv> {
                           )
                         ],
                       ),
+                    ),
+
+                    // days card here
+
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 0, 250, 20),
+                      child: Container(
+                        color: Colors.greenAccent[100],
+                        child: Row(
+                          children: [
+                            Text(
+                              '30 Days',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.green[300]),
+                            )
+                          ],
+                        ),
+                      ),
                     )
                   ],
                 ),
