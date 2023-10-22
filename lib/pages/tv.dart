@@ -11,6 +11,7 @@ class tv extends StatefulWidget {
 
 class _tvState extends State<tv> {
   String dropdownValue = 'DSTV';
+  String hintText = 'Enter DSTV smartcard Number'; // Default hint text
 
   @override
   Widget build(BuildContext context) {
@@ -61,6 +62,16 @@ class _tvState extends State<tv> {
                                 onChanged: (String? newValue) {
                                   setState(() {
                                     dropdownValue = newValue!;
+
+                                    // Update the hint text based on the selected option
+                                    if (dropdownValue == 'DSTV') {
+                                      hintText = 'Enter DSTV smartcard Number';
+                                    } else if (dropdownValue == 'GOTV') {
+                                      hintText = 'Enter GOTV smartcard Number';
+                                    } else if (dropdownValue == 'Startimes') {
+                                      hintText =
+                                          'Enter Startimes smartcard Number';
+                                    }
                                   });
                                 },
                                 items: [
@@ -193,7 +204,7 @@ class _tvState extends State<tv> {
                     TextField(
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
-                        hintText: 'Enter your Smartcard Number',
+                        hintText: hintText,
                         border: InputBorder.none,
                       ),
                     ),
