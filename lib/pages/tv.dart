@@ -155,28 +155,36 @@ class _tvState extends State<tv> {
               padding: const EdgeInsets.all(14.0),
               child: Container(
                 decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                ),
                 child: Column(
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text('Smartcard Number'),
-                              Row(
-                                children: [
-                                  Text(
-                                    'Beneficiaries',
-                                    style: TextStyle(color: Colors.grey),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                        )
+                        Row(
+                          children: [
+                            Text(
+                              'Smartcard Number',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 17),
+                            )
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              'Beneficiaries',
+                              style:
+                                  TextStyle(color: Colors.grey, fontSize: 17),
+                            ),
+                            Icon(
+                              Icons.keyboard_arrow_right_rounded,
+                              color: Colors.grey,
+                            )
+                          ],
+                        ),
                       ],
                     )
                   ],
