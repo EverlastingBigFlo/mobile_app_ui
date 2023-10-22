@@ -39,6 +39,8 @@ class _tvState extends State<tv> {
     }
   }
 
+  String? selectedPeriod;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,310 +54,404 @@ class _tvState extends State<tv> {
         ),
       ),
       backgroundColor: Colors.grey[100],
-      body: Container(
-        child: Column(
-          children: [
-//first card here
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10.0),
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            children: [
+              //first card here
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  padding: EdgeInsets.all(12.0),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Service Provider',
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.grey,
+                          ),
+                        ),
+                        //dropdown options start here
+                        Row(
+                          children: [
+                            Expanded(
+                              child: DropdownButtonHideUnderline(
+                                child: DropdownButton<String>(
+                                  value: dropdownValue,
+                                  onChanged: (String? newValue) {
+                                    setState(() {
+                                      dropdownValue = newValue!;
+                                      // Reset the selectedPackage when changing the service provider
+                                      selectedPackage = null; // Add this line
+                                      // Update the hint text based on the selected option
+                                      if (dropdownValue == 'DSTV') {
+                                        hintText =
+                                            'Enter DSTV smartcard Number';
+                                      } else if (dropdownValue == 'GOTV') {
+                                        hintText =
+                                            'Enter GOTV smartcard Number';
+                                      } else if (dropdownValue == 'Startimes') {
+                                        hintText =
+                                            'Enter Startimes smartcard Number';
+                                      }
+                                    });
+                                  },
+                                  items: [
+                                    DropdownMenuItem(
+                                      value: 'DSTV',
+                                      child: Row(
+                                        children: [
+                                          ClipOval(
+                                            child: Image(
+                                              image: AssetImage(
+                                                  'lib/assets/op.png'),
+                                              fit: BoxFit.cover,
+                                              width: 40,
+                                            ),
+                                          ),
+                                          SizedBox(width: 10),
+                                          Text(
+                                            'DSTV',
+                                            style: TextStyle(fontSize: 18),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    DropdownMenuItem(
+                                      value: 'GOTV',
+                                      child: Row(
+                                        children: [
+                                          ClipOval(
+                                            child: Image(
+                                              image: AssetImage(
+                                                  'lib/assets/gotv.webp'),
+                                              fit: BoxFit.cover,
+                                              width: 40,
+                                              height: 40,
+                                            ),
+                                          ),
+                                          SizedBox(width: 10),
+                                          Text(
+                                            'GOTV',
+                                            style: TextStyle(fontSize: 18),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    DropdownMenuItem(
+                                      value: 'Startimes',
+                                      child: Row(
+                                        children: [
+                                          ClipOval(
+                                            child: Image(
+                                              image: AssetImage(
+                                                  'lib/assets/startimes.png'),
+                                              fit: BoxFit.cover,
+                                              width: 40,
+                                              height: 40,
+                                            ),
+                                          ),
+                                          SizedBox(width: 10),
+                                          Text(
+                                            'Startimes',
+                                            style: TextStyle(fontSize: 18),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-                padding: EdgeInsets.all(12.0),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+              ),
+
+              // ads code here
+              ClipRRect(
+                borderRadius: BorderRadius.circular(
+                    10.0), // Adjust the border radius as needed
+                child: Image(
+                  image: AssetImage('lib/assets/StartimeswithFemi.webp'),
+                  fit: BoxFit.cover, // Adjust the fit as needed
+                  height: 40, // Adjust the height as needed
+                  width: 370, // Adjust the height as needed
+                ),
+              ),
+
+              // smart card section here
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  ),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Service Provider',
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.grey,
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  'Smartcard Number',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 17),
+                                )
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  'Beneficiaries',
+                                  style: TextStyle(
+                                      color: Colors.grey, fontSize: 17),
+                                ),
+                                Icon(
+                                  Icons.keyboard_arrow_right_rounded,
+                                  color: Colors.grey,
+                                )
+                              ],
+                            ),
+                          ],
                         ),
                       ),
-                      //dropdown options start here
+
+                      // textfield start here
+
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 0, 20, 30),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors
+                                .grey[350], // Set the background color here
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10.0)),
+                          ),
+                          child: TextField(
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                              hintText: hintText,
+                              hintStyle: TextStyle(
+                                color: Colors.grey,
+                                letterSpacing: 2.0,
+                              ),
+                              contentPadding:
+                                  EdgeInsets.fromLTRB(10, 20, 10, 20),
+                              border: InputBorder.none,
+                            ),
+                          ),
+                        ),
+                      )
+                      // textfield end here
+
+                      ,
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 20, 0, 10),
+                        child: Row(
+                          children: [
+                            Text(
+                              'Payment Period',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.bold),
+                            )
+                          ],
+                        ),
+                      ),
+
+                      // days card here
                       Row(
                         children: [
-                          Expanded(
+                          // '1 Day' Box
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(15, 0, 0, 20),
+                            child: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  selectedPeriod = '1 Day';
+                                });
+                              },
+                              child: Container(
+                                alignment: Alignment.centerLeft,
+                                width: 100,
+                                height: 45,
+                                decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(8)),
+                                  color: selectedPeriod == '1 Day'
+                                      ? Colors.green[100]
+                                      : Colors.grey[200],
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    '1 Day',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: selectedPeriod == '1 Day'
+                                          ? Colors.green
+                                          : Colors.grey,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+
+                          // '7 Days' Box
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(15, 0, 0, 20),
+                            child: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  selectedPeriod = '7 Days';
+                                });
+                              },
+                              child: Container(
+                                alignment: Alignment.centerLeft,
+                                width: 100,
+                                height: 45,
+                                decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(8)),
+                                  color: selectedPeriod == '7 Days'
+                                      ? Colors.green[100]
+                                      : Colors.grey[200],
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    '7 Days',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: selectedPeriod == '7 Days'
+                                          ? Colors.green
+                                          : Colors.grey,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+
+                          // '30 Days' Box
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(15, 0, 0, 20),
+                            child: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  selectedPeriod = '30 Days';
+                                });
+                              },
+                              child: Container(
+                                alignment: Alignment.centerLeft,
+                                width: 100,
+                                height: 45,
+                                decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(8)),
+                                  color: selectedPeriod == '30 Days'
+                                      ? Colors.green[100]
+                                      : Colors.grey[200],
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    '30 Days',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: selectedPeriod == '30 Days'
+                                          ? Colors.green
+                                          : Colors.grey,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      // days card end here
+
+                      // package widget start here
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 5, 0, 10),
+                        child: Row(
+                          children: [
+                            Text(
+                              'Package',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.bold),
+                            )
+                          ],
+                        ),
+                      ),
+
+                      // package option selection starts here
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+                        child: Container(
+                          width: 350,
+                          height: 65,
+                          decoration: BoxDecoration(
+                            color: Colors
+                                .grey[350], // Set the background color here
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10.0)),
+                          ),
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 12.0),
                             child: DropdownButtonHideUnderline(
                               child: DropdownButton<String>(
-                                value: dropdownValue,
+                                value: selectedPackage,
                                 onChanged: (String? newValue) {
                                   setState(() {
-                                    dropdownValue = newValue!;
-                                    // Reset the selectedPackage when changing the service provider
-                                    selectedPackage = null; // Add this line
-                                    // Update the hint text based on the selected option
-                                    if (dropdownValue == 'DSTV') {
-                                      hintText = 'Enter DSTV smartcard Number';
-                                    } else if (dropdownValue == 'GOTV') {
-                                      hintText = 'Enter GOTV smartcard Number';
-                                    } else if (dropdownValue == 'Startimes') {
-                                      hintText =
-                                          'Enter Startimes smartcard Number';
-                                    }
+                                    selectedPackage = newValue!;
                                   });
                                 },
                                 items: [
                                   DropdownMenuItem(
-                                    value: 'DSTV',
-                                    child: Row(
-                                      children: [
-                                        ClipOval(
-                                          child: Image(
-                                            image:
-                                                AssetImage('lib/assets/op.png'),
-                                            fit: BoxFit.cover,
-                                            width: 40,
-                                          ),
-                                        ),
-                                        SizedBox(width: 10),
-                                        Text(
-                                          'DSTV',
-                                          style: TextStyle(fontSize: 18),
-                                        ),
-                                      ],
+                                    value:
+                                        null, // Set value to null to indicate that it's not a valid selection
+                                    child: Text(
+                                      'Please select your package', // Your hint text
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                      ),
                                     ),
                                   ),
-                                  DropdownMenuItem(
-                                    value: 'GOTV',
-                                    child: Row(
-                                      children: [
-                                        ClipOval(
-                                          child: Image(
-                                            image: AssetImage(
-                                                'lib/assets/gotv.webp'),
-                                            fit: BoxFit.cover,
-                                            width: 40,
-                                            height: 40,
-                                          ),
-                                        ),
-                                        SizedBox(width: 10),
-                                        Text(
-                                          'GOTV',
-                                          style: TextStyle(fontSize: 18),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  DropdownMenuItem(
-                                    value: 'Startimes',
-                                    child: Row(
-                                      children: [
-                                        ClipOval(
-                                          child: Image(
-                                            image: AssetImage(
-                                                'lib/assets/startimes.png'),
-                                            fit: BoxFit.cover,
-                                            width: 40,
-                                            height: 40,
-                                          ),
-                                        ),
-                                        SizedBox(width: 10),
-                                        Text(
-                                          'Startimes',
-                                          style: TextStyle(fontSize: 18),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                                  ...buildPackageDropdownItems(), // Include your other items
                                 ],
                               ),
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                      )
                     ],
                   ),
                 ),
-              ),
-            ),
-
-            // ads code here
-            ClipRRect(
-              borderRadius: BorderRadius.circular(
-                  10.0), // Adjust the border radius as needed
-              child: Image(
-                image: AssetImage('lib/assets/StartimeswithFemi.webp'),
-                fit: BoxFit.cover, // Adjust the fit as needed
-                height: 40, // Adjust the height as needed
-                width: 370, // Adjust the height as needed
-              ),
-            ),
-
-            // smart card section here
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              Text(
-                                'Smartcard Number',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 17),
-                              )
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                'Beneficiaries',
-                                style:
-                                    TextStyle(color: Colors.grey, fontSize: 17),
-                              ),
-                              Icon(
-                                Icons.keyboard_arrow_right_rounded,
-                                color: Colors.grey,
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    // textfield start here
-
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 0, 20, 30),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color:
-                              Colors.grey[350], // Set the background color here
-                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                        ),
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                            hintText: hintText,
-                            hintStyle: TextStyle(
-                              color: Colors.grey,
-                              letterSpacing: 2.0,
-                            ),
-                            contentPadding: EdgeInsets.fromLTRB(10, 20, 10, 20),
-                            border: InputBorder.none,
-                          ),
-                        ),
-                      ),
-                    )
-                    // textfield end here
-
-                    ,
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 20, 0, 10),
-                      child: Row(
-                        children: [
-                          Text(
-                            'Payment Period',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.bold),
-                          )
-                        ],
-                      ),
-                    ),
-
-                    // days card here
-
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(25, 0, 0, 20),
-                      child: Row(
-                        children: [
-                          Container(
-                            alignment: Alignment.centerLeft,
-                            width: 100,
-                            height: 45,
-                            decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(8)),
-                              color: Colors.greenAccent[100],
-                            ),
-                            child: Center(
-                              child: Text(
-                                '30 Days',
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.green[400]),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    // days card end here
-
-                    // package widget start here
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 5, 0, 10),
-                      child: Row(
-                        children: [
-                          Text(
-                            'Package',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.bold),
-                          )
-                        ],
-                      ),
-                    ),
-
-                    // package option selection starts here
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
-                      child: Container(
-                        width: 350,
-                        height: 65,
-                        decoration: BoxDecoration(
-                          color:
-                              Colors.grey[350], // Set the background color here
-                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                          child: DropdownButtonHideUnderline(
-                            child: DropdownButton<String>(
-                              value: selectedPackage,
-                              onChanged: (String? newValue) {
-                                setState(() {
-                                  selectedPackage = newValue!;
-                                });
-                              },
-                              items: [
-                                DropdownMenuItem(
-                                  value:
-                                      null, // Set value to null to indicate that it's not a valid selection
-                                  child: Text(
-                                    'Please select your package', // Your hint text
-                                    style: TextStyle(
-                                      color: Colors.grey,
-                                    ),
-                                  ),
-                                ),
-                                ...buildPackageDropdownItems(), // Include your other items
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
