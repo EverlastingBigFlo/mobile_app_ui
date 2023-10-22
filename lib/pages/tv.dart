@@ -12,9 +12,7 @@ class tv extends StatefulWidget {
 class _tvState extends State<tv> {
   String dropdownValue = 'DSTV';
   String hintText = 'Enter DSTV smartcard Number'; // Default hint text
-  String?
-      selectedPackage; // Add this line to declare the selectedPackage variable
-// Define the function to build the package dropdown items
+  String? selectedPackage;
   List<DropdownMenuItem<String>> buildPackageDropdownItems() {
     switch (dropdownValue) {
       case 'DSTV':
@@ -79,23 +77,23 @@ class _tvState extends State<tv> {
                       Text(
                         'Service Provider',
                         style: TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.grey),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.grey,
+                        ),
                       ),
-
                       //dropdown options start here
                       Row(
                         children: [
                           Expanded(
                             child: DropdownButtonHideUnderline(
-                              // Hide the underline
                               child: DropdownButton<String>(
                                 value: dropdownValue,
                                 onChanged: (String? newValue) {
                                   setState(() {
                                     dropdownValue = newValue!;
-
+                                    // Reset the selectedPackage when changing the service provider
+                                    selectedPackage = null; // Add this line
                                     // Update the hint text based on the selected option
                                     if (dropdownValue == 'DSTV') {
                                       hintText = 'Enter DSTV smartcard Number';
@@ -175,7 +173,7 @@ class _tvState extends State<tv> {
                             ),
                           ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -294,7 +292,7 @@ class _tvState extends State<tv> {
                               child: Text(
                                 '30 Days',
                                 style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.green[400]),
                               ),
@@ -320,9 +318,18 @@ class _tvState extends State<tv> {
                     ),
 
                     // package option selection starts here
-                    Row(
-                      children: [
-                        Expanded(
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+                      child: Container(
+                        width: 350,
+                        height: 65,
+                        decoration: BoxDecoration(
+                          color:
+                              Colors.grey[350], // Set the background color here
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 12.0),
                           child: DropdownButtonHideUnderline(
                             child: DropdownButton<String>(
                               value: selectedPackage,
@@ -331,11 +338,23 @@ class _tvState extends State<tv> {
                                   selectedPackage = newValue!;
                                 });
                               },
-                              items: buildPackageDropdownItems(),
+                              items: [
+                                DropdownMenuItem(
+                                  value:
+                                      null, // Set value to null to indicate that it's not a valid selection
+                                  child: Text(
+                                    'Please select your package', // Your hint text
+                                    style: TextStyle(
+                                      color: Colors.grey,
+                                    ),
+                                  ),
+                                ),
+                                ...buildPackageDropdownItems(), // Include your other items
+                              ],
                             ),
                           ),
                         ),
-                      ],
+                      ),
                     )
                   ],
                 ),
