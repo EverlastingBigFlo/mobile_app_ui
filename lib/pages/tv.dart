@@ -230,7 +230,7 @@ class _tvState extends State<tv> {
 
                     ,
                     Padding(
-                      padding: const EdgeInsets.all(20.0),
+                      padding: const EdgeInsets.fromLTRB(20, 20, 0, 10),
                       child: Row(
                         children: [
                           Text(
@@ -245,22 +245,34 @@ class _tvState extends State<tv> {
                     // days card here
 
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 0, 250, 20),
-                      child: Container(
-                        color: Colors.greenAccent[100],
-                        child: Row(
-                          children: [
-                            Text(
-                              '30 Days',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.green[300]),
-                            )
-                          ],
-                        ),
+                      padding: const EdgeInsets.fromLTRB(25, 0, 0, 20),
+                      child: Row(
+                        children: [
+                          Container(
+                            alignment: Alignment.centerLeft,
+                            width: 100,
+                            height: 45,
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(8)),
+                              color: Colors.greenAccent[100],
+                            ),
+                            child: Center(
+                              child: Text(
+                                '30 Days',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.green[400]),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    )
+                    ),
+                    // days card end here
+                  
+                  
                   ],
                 ),
               ),
