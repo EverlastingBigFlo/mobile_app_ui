@@ -18,26 +18,21 @@ class _tvState extends State<tv> {
       case 'DSTV':
         return [
           DropdownMenuItem(
-              value: 'DSTV Package 1', child: Text('DSTV Package 1')),
+              value: 'DSTV Package 1', child: Text('DSTV Premium')),
           DropdownMenuItem(
-              value: 'DSTV Package 2', child: Text('DSTV Package 2')),
-          // Add more DSTV packages as needed
+              value: 'DSTV Package 2', child: Text('DSTV Compact Plus')),
         ];
       case 'GOTV':
         return [
-          DropdownMenuItem(
-              value: 'GOTV Package 1', child: Text('GOTV Package 1')),
-          DropdownMenuItem(
-              value: 'GOTV Package 2', child: Text('GOTV Package 2')),
-          // Add more GOTV packages as needed
+          DropdownMenuItem(value: 'GOTV Package 1', child: Text('GOTV Supa')),
+          DropdownMenuItem(value: 'GOTV Package 2', child: Text('GOTV Max')),
         ];
       case 'Startimes':
         return [
           DropdownMenuItem(
-              value: 'Startimes Package 1', child: Text('Startimes Package 1')),
+              value: 'Startimes Package 1', child: Text('DTT_Nova')),
           DropdownMenuItem(
-              value: 'Startimes Package 2', child: Text('Startimes Package 2')),
-          // Add more Startimes packages as needed
+              value: 'Startimes Package 2', child: Text('DTT_Basic')),
         ];
       default:
         return [];
