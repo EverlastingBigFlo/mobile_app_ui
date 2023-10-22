@@ -201,13 +201,28 @@ class _tvState extends State<tv> {
                         ],
                       ),
                     ),
-                    TextField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        hintText: hintText,
-                        border: InputBorder.none,
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 0, 20, 30),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color:
+                              Colors.grey[350], // Set the background color here
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        ),
+                        child: TextField(
+                          keyboardType: TextInputType.number,
+                          decoration: InputDecoration(
+                            hintText: hintText,
+                            hintStyle: TextStyle(
+                              color: Colors.grey,
+                              letterSpacing: 2.0,
+                            ),
+                            contentPadding: EdgeInsets.fromLTRB(10, 20, 10, 20),
+                            border: InputBorder.none,
+                          ),
+                        ),
                       ),
-                    ),
+                    )
                   ],
                 ),
               ),
