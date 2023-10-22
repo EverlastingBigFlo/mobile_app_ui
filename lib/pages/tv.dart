@@ -201,6 +201,9 @@ class _tvState extends State<tv> {
                         ],
                       ),
                     ),
+
+                    // textfield start here
+
                     Padding(
                       padding: const EdgeInsets.fromLTRB(20, 0, 20, 30),
                       child: Container(
@@ -221,6 +224,21 @@ class _tvState extends State<tv> {
                             border: InputBorder.none,
                           ),
                         ),
+                      ),
+                    )
+                    // textfield end here
+
+                    ,
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Payment Period',
+                            style: TextStyle(
+                                fontSize: 17, fontWeight: FontWeight.bold),
+                          )
+                        ],
                       ),
                     )
                   ],
