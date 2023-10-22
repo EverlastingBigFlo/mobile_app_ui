@@ -12,6 +12,39 @@ class tv extends StatefulWidget {
 class _tvState extends State<tv> {
   String dropdownValue = 'DSTV';
   String hintText = 'Enter DSTV smartcard Number'; // Default hint text
+  String?
+      selectedPackage; // Add this line to declare the selectedPackage variable
+// Define the function to build the package dropdown items
+  List<DropdownMenuItem<String>> buildPackageDropdownItems() {
+    switch (dropdownValue) {
+      case 'DSTV':
+        return [
+          DropdownMenuItem(
+              value: 'DSTV Package 1', child: Text('DSTV Package 1')),
+          DropdownMenuItem(
+              value: 'DSTV Package 2', child: Text('DSTV Package 2')),
+          // Add more DSTV packages as needed
+        ];
+      case 'GOTV':
+        return [
+          DropdownMenuItem(
+              value: 'GOTV Package 1', child: Text('GOTV Package 1')),
+          DropdownMenuItem(
+              value: 'GOTV Package 2', child: Text('GOTV Package 2')),
+          // Add more GOTV packages as needed
+        ];
+      case 'Startimes':
+        return [
+          DropdownMenuItem(
+              value: 'Startimes Package 1', child: Text('Startimes Package 1')),
+          DropdownMenuItem(
+              value: 'Startimes Package 2', child: Text('Startimes Package 2')),
+          // Add more Startimes packages as needed
+        ];
+      default:
+        return [];
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -285,6 +318,25 @@ class _tvState extends State<tv> {
                         ],
                       ),
                     ),
+
+                    // package option selection starts here
+                    Row(
+                      children: [
+                        Expanded(
+                          child: DropdownButtonHideUnderline(
+                            child: DropdownButton<String>(
+                              value: selectedPackage,
+                              onChanged: (String? newValue) {
+                                setState(() {
+                                  selectedPackage = newValue!;
+                                });
+                              },
+                              items: buildPackageDropdownItems(),
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),
