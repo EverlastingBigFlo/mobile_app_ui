@@ -189,7 +189,14 @@ class _tvState extends State<tv> {
                           ),
                         ],
                       ),
-                    )
+                    ),
+                    TextField(
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                        hintText: 'Enter your Smartcard Number',
+                        border: InputBorder.none,
+                      ),
+                    ),
                   ],
                 ),
               ),
