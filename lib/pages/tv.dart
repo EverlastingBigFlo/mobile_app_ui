@@ -152,7 +152,7 @@ class _tvState extends State<tv> {
 
             // smart card section here
             Padding(
-              padding: const EdgeInsets.all(14.0),
+              padding: const EdgeInsets.all(12.0),
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -160,32 +160,35 @@ class _tvState extends State<tv> {
                 ),
                 child: Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              'Smartcard Number',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 17),
-                            )
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              'Beneficiaries',
-                              style:
-                                  TextStyle(color: Colors.grey, fontSize: 17),
-                            ),
-                            Icon(
-                              Icons.keyboard_arrow_right_rounded,
-                              color: Colors.grey,
-                            )
-                          ],
-                        ),
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                'Smartcard Number',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 17),
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                'Beneficiaries',
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 17),
+                              ),
+                              Icon(
+                                Icons.keyboard_arrow_right_rounded,
+                                color: Colors.grey,
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 ),
