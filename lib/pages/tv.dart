@@ -450,6 +450,19 @@ class _tvState extends State<tv> {
                   ),
                 ),
               )
+
+              //save beneficiary here
+              ,
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Save Beneficiary'),
+                    Icon(Icons.check_box_outline_blank)
+                  ],
+                ),
+              )
             ],
           ),
         ),
