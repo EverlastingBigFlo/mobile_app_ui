@@ -294,10 +294,9 @@ class _MyOpayState extends State<MyOpay> {
                             return Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: SizedBox(
-                                width: 80,
-                                // height: 100,
-                                child: MaterialButton(
-                                  onPressed: () {
+                                width: 60,
+                                child: InkWell(
+                                  onTap: () {
                                     if (e['text'] == 'Airtime') {
                                       Navigator.pushNamed(context, 'airtime');
                                     } else if (e['text'] == 'Data') {
