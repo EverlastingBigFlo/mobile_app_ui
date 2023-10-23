@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
+// ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, sort_child_properties_last
 
 import 'package:flutter/material.dart';
 
@@ -478,11 +478,26 @@ class _tvState extends State<tv> {
                             )
                           : Icon(
                               Icons.toggle_off_outlined,
-                              color: Colors.white,
+                              color: const Color.fromARGB(255, 55, 109, 83),
                               size: 40,
                             ),
                     )
                   ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 10, 0, 30),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Confirm',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.green,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 140, vertical: 10)),
                 ),
               )
             ],
