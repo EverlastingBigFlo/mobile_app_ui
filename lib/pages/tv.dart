@@ -10,9 +10,11 @@ class tv extends StatefulWidget {
 }
 
 class _tvState extends State<tv> {
+  bool isToggled = false;
   String dropdownValue = 'DSTV';
   String hintText = 'Enter DSTV smartcard Number'; // Default hint text
   String? selectedPackage;
+
   List<DropdownMenuItem<String>> buildPackageDropdownItems() {
     switch (dropdownValue) {
       case 'DSTV':
@@ -271,7 +273,7 @@ class _tvState extends State<tv> {
                               'Payment Period',
                               style: TextStyle(
                                   fontSize: 17, fontWeight: FontWeight.bold),
-                            )
+                            ),
                           ],
                         ),
                       ),
@@ -459,7 +461,16 @@ class _tvState extends State<tv> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Save Beneficiary'),
-                    Icon(Icons.check_box_outline_blank)
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          isToggled = !isToggled; // Toggle the state
+                        });
+                      },
+                      child: isToggled
+                          ? Icon(Icons.toggle_on_rounded)
+                          : Icon(Icons.toggle_off_outlined),
+                    )
                   ],
                 ),
               )
