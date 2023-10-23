@@ -460,7 +460,10 @@ class _tvState extends State<tv> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Save Beneficiary'),
+                    Text(
+                      'Save Beneficiary',
+                      style: TextStyle(fontSize: 17),
+                    ),
                     InkWell(
                       onTap: () {
                         setState(() {
@@ -468,8 +471,16 @@ class _tvState extends State<tv> {
                         });
                       },
                       child: isToggled
-                          ? Icon(Icons.toggle_on_rounded)
-                          : Icon(Icons.toggle_off_outlined),
+                          ? Icon(
+                              Icons.toggle_on_rounded,
+                              color: Colors.green,
+                              size: 40,
+                            )
+                          : Icon(
+                              Icons.toggle_off_outlined,
+                              color: Colors.white,
+                              size: 40,
+                            ),
                     )
                   ],
                 ),
