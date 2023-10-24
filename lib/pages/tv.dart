@@ -499,7 +499,7 @@ class _tvState extends State<tv> {
                       padding:
                           EdgeInsets.symmetric(horizontal: 140, vertical: 10)),
                 ),
-              )
+              ), 
             ],
           ),
         ),

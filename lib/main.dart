@@ -4,7 +4,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:my_opay/components/card_for_page_view.dart';
-import 'package:my_opay/new_page.dart';
+// import 'package:my_opay/new_page.dart';
 import 'package:my_opay/pages/airtime.dart';
 import 'package:my_opay/pages/reward_page.dart';
 import 'package:my_opay/pages/tv.dart';
