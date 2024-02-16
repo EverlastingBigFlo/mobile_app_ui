@@ -467,7 +467,7 @@ class _tvState extends State<tv> {
                     InkWell(
                       onTap: () {
                         setState(() {
-                          isToggled = !isToggled; // Toggle the state
+                          isToggled = !isToggled;
                         });
                       },
                       child: isToggled
